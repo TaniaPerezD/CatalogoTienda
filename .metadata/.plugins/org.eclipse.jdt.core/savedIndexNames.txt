@@ -1,0 +1,18 @@
+INDEX VERSION 1.134+E:\GitHub\CatTienda\CatalogoTienda\.metadata\.plugins\org.eclipse.jdt.core
+1994792152.index
+3717203161.index
+2856609759.index
+1761498116.index
+4026237490.index
+1245458633.index
+2812547059.index
+2434248415.index
+4148455586.index
+4098692862.index
+579404460.index
+778828181.index
+75661996.index
+3201287129.index
+3832997052.index
+1865797976.index
+1780629120.index

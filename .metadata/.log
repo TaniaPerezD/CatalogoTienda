@@ -245,3 +245,9 @@ Binding(ALT+SHIFT+D R,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.genuitec.copilot4eclipse.chat 1 0 2024-11-24 19:42:33.918
+!MESSAGE Jetty server stopped: Server@75690d8b{STOPPED}[10.0.20,sto=0]
+
+!ENTRY com.genuitec.copilot4eclipse.chat 1 0 2024-11-24 19:42:33.919
+!MESSAGE Jetty server stopped: true

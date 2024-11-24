@@ -1,0 +1,5 @@
+INDEX VERSION 1.134
+E:\GitHub\CatTienda\CatalogoTienda\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\278397156.index
+\shopping-cart\src
+E:\GitHub\CatTienda\CatalogoTienda\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3841129941.index
+\shopping-cart\src
