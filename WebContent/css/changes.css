@@ -64,6 +64,7 @@ button:hover {
 	border: 1px solid red;
 	padding: 7px;
 	font-weight: bold;
+	border-radius: 5px;
 }
 
 .bg-1 {
@@ -91,13 +92,13 @@ button:hover {
 
 /*Handling the price tag*/
 .price {
-	color: red;
+	color:#000;
 	font-weight: bold;
 	font-size: 20px;
 }
 
 .productname {
-	color: green;
+	color: #fa9f90;
 	font-size: 15px;
 	font-family: fantasy;
 }
@@ -176,3 +177,4 @@ i {
 i.fa::before {
 	font-size: 3rem !important;
 }
+
