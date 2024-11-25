@@ -66,12 +66,12 @@
 						data-toggle="dropdown" href="#">Categoria <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="index.jsp?type=mobile">Mobiles</a></li>
-							<li><a href="index.jsp?type=tv">TVs</a></li>
-							<li><a href="index.jsp?type=laptop">Laptops</a></li>
-							<li><a href="index.jsp?type=camera">Camera</a></li>
-							<li><a href="index.jsp?type=speaker">Speakers</a></li>
-							<li><a href="index.jsp?type=tablet">Tablets</a></li>
+							<li><a href="index.jsp?type=carne">Carne</a></li>
+							<li><a href="index.jsp?type=frutas">Frutas</a></li>
+							<li><a href="index.jsp?type=verduras">Verduras</a></li>
+							<li><a href="index.jsp?type=Panes">Panes</a></li>
+							<li><a href="index.jsp?type=lacteos">Lacteos</a></li>
+							<li><a href="index.jsp?type=otra">Otra</a></li>
 						</ul></li>
 				</ul>
 			</div>
@@ -103,12 +103,12 @@
 						data-toggle="dropdown" href="#">Categor�a <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="userHome.jsp?type=mobile">Mobiles</a></li>
-							<li><a href="userHome.jsp?type=tv">TV</a></li>
-							<li><a href="userHome.jsp?type=laptop">Laptops</a></li>
-							<li><a href="userHome.jsp?type=camera">Camera</a></li>
-							<li><a href="userHome.jsp?type=speaker">Speakers</a></li>
-							<li><a href="userHome.jsp?type=tablet">Tablets</a></li>
+							<li><a href="index.jsp?type=carne">Carne</a></li>
+							<li><a href="index.jsp?type=frutas">Frutas</a></li>
+							<li><a href="index.jsp?type=verduras">Verduras</a></li>
+							<li><a href="index.jsp?type=Panes">Panes</a></li>
+							<li><a href="index.jsp?type=lacteos">Lacteos</a></li>
+							<li><a href="index.jsp?type=otra">Otra</a></li>
 						</ul></li>
 					<%
 					if (notf == 0) {
@@ -157,12 +157,12 @@
 						data-toggle="dropdown" href="#">Categoría <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="adminViewProduct.jsp?type=mobile">Mobiles</a></li>
-							<li><a href="adminViewProduct.jsp?type=tv">Tvs</a></li>
-							<li><a href="adminViewProduct.jsp?type=laptop">Laptops</a></li>
-							<li><a href="adminViewProduct.jsp?type=camera">Camera</a></li>
-							<li><a href="adminViewProduct.jsp?type=speaker">Speakers</a></li>
-							<li><a href="adminViewProduct.jsp?type=tablet">Tablets</a></li>
+							<li><a href="index.jsp?type=carne">Carne</a></li>
+							<li><a href="index.jsp?type=frutas">Frutas</a></li>
+							<li><a href="index.jsp?type=verduras">Verduras</a></li>
+							<li><a href="index.jsp?type=Panes">Panes</a></li>
+							<li><a href="index.jsp?type=lacteos">Lacteos</a></li>
+							<li><a href="index.jsp?type=otra">Otra</a></li>
 						</ul></li>
 					<li><a href="adminStock.jsp">Stock</a></li>
 					<li><a href="shippedItems.jsp">Pedidos entregados</a></li>

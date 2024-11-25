@@ -18,7 +18,7 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color:  #FAE0DC;;">
 	<!--Company Header Starting  -->
 	<div class="container-fluid text-center"
 		style="margin-top: 45px; background-color: #fa91a0; color: white; padding: 5px;">
@@ -59,7 +59,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login.jsp">Iniciar sesi�n</a></li>
+					<li><a href="login.jsp">Iniciar sesión</a></li>
 					<li><a href="register.jsp">Registrarse</a></li>
 					<li><a href="index.jsp">Productos</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
@@ -131,7 +131,7 @@
 					%>
 					<li><a href="orderDetails.jsp">Pedidos</a></li>
 					<li><a href="userProfile.jsp">Perfil</a></li>
-					<li><a href="./LogoutSrv">Cerrar sesi�n</a></li>
+					<li><a href="./LogoutSrv">Cerrar sesión</a></li>
 				</ul>
 			</div>
 		</div>
@@ -154,7 +154,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="adminViewProduct.jsp">Productos</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">Categor�a <span class="caret"></span>
+						data-toggle="dropdown" href="#">Categoría <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
 							<li><a href="adminViewProduct.jsp?type=mobile">Mobiles</a></li>

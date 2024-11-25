@@ -16,7 +16,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color:  #FAE0DC;;">
 	<%
 	/* Checking the user credentials */
 	String utype = (String) session.getAttribute("usertype");
@@ -31,7 +31,7 @@
 		response.sendRedirect("login.jsp?message=Access Denied, Login as admin!!");
 		return;
 	} else if (uname == null || pwd == null) {
-		response.sendRedirect("login.jsp?message=Session Expired, Login Again!!");
+		response.sendRedirect("login.jsp?message=¡Sesión expirada, inicie sesión de nuevo!");
 		return;
 	}
 	%>

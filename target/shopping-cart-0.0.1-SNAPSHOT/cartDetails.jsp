@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Cart Details</title>
+<title>Detalles del carrito</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -18,7 +18,7 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color:  #FAE0DC;;">
 
 	<%
 	/* Checking the user credentials */
@@ -27,7 +27,7 @@
 
 	if (userName == null || password == null) {
 
-		response.sendRedirect("login.jsp?message=Session Expired, Login Again!!");
+		response.sendRedirect("login.jsp?message=¡Sesión expirada, inicie sesión de nuevo!");
 
 	}
 
@@ -72,13 +72,13 @@
 			<thead
 				style="background-color: #186188; color: white; font-size: 16px; font-weight: bold;">
 				<tr>
-					<th>Picture</th>
-					<th>Products</th>
-					<th>Price</th>
-					<th>Quantity</th>
-					<th>Add</th>
-					<th>Remove</th>
-					<th>Amount</th>
+					<th>Imagen</th>
+					<th>Productos</th>
+					<th>Precio</th>
+					<th>Cantidad</th>
+					<th>Agregar</th>
+					<th>Quitar</th>
+					<th>Total</th>
 				</tr>
 			</thead>
 			<tbody
@@ -133,8 +133,7 @@
 				%>
 
 				<tr style="background-color: grey; color: white;">
-					<td colspan="6" style="text-align: center;">Total Amount to
-						Pay (in Rupees)</td>
+					<td colspan="6" style="text-align: center;">Total a pagar (bs)</td>
 					<td><%=totAmount%></td>
 				</tr>
 				<%
@@ -144,11 +143,11 @@
 					<td colspan="4" style="text-align: center;">
 					<td><form method="post">
 							<button formaction="userHome.jsp"
-								style="background-color: black; color: white;">Cancel</button>
+								style="background-color: black; color: white;">Cancelar</button>
 						</form></td>
 					<td colspan="2" align="center"><form method="post">
 							<button style="background-color: blue; color: white;"
-								formaction="payment.jsp?amount=<%=totAmount%>">Pay Now</button>
+								formaction="payment.jsp?amount=<%=totAmount%>">Pagar</button>
 						</form></td>
 
 				</tr>

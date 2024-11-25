@@ -6,14 +6,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Admin Home</title>
+<title>Admin</title>
 <link rel="stylesheet" href="css/changes.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color:  #FAE0DC;;">
 	<%
 	/* Checking the user credentials */
 	String userType = (String) session.getAttribute("usertype");
@@ -28,7 +28,7 @@
 
 	else if (userName == null || password == null) {
 
-		response.sendRedirect("login.jsp?message=Session Expired, Login Again!!");
+		response.sendRedirect("login.jsp?message=¡Sesión expirada, inicie sesión de nuevo!");
 
 	}
 	%>
@@ -36,21 +36,20 @@
 	<jsp:include page="header.jsp" />
 
 	<div class="text-center"
-		style="color: green; font-size: 24px; font-weight: bold;">Shipped
-		Orders</div>
+		style="color: green; font-size: 24px; font-weight: bold;">Pedidos finalizados</div>
 	<div class="container-fluid">
 		<div class="table-responsive ">
 			<table class="table table-hover table-sm">
 				<thead
 					style="background-color: #115884; color: white; font-size: 18px;">
 					<tr>
-						<th>TransactionId</th>
-						<th>ProductId</th>
-						<th>Username</th>
-						<th>Address</th>
-						<th>Quantity</th>
-						<th>Amount</th>
-						<td>Status</td>
+						<th>Id Pedido</th>
+						<th>Id Producto</th>
+						<th>Correo</th>
+						<th>Dirección</th>
+						<th>Cantidad</th>
+						<th>Total</th>
+						<td>Estado</td>
 					</tr>
 				</thead>
 				<tbody style="background-color: white;">
@@ -79,7 +78,7 @@
 						<td><%=userAddr%></td>
 						<td><%=quantity%></td>
 						<td>Rs. <%=order.getAmount()%></td>
-						<td class="text-success" style="font-weight: bold;">SHIPPED</td>
+						<td class="text-success" style="font-weight: bold;">Entregado</td>
 
 					</tr>
 
@@ -91,8 +90,7 @@
 					if (count == 0) {
 					%>
 					<tr style="background-color: grey; color: white;">
-						<td colspan="7" style="text-align: center;">No Items
-							Available</td>
+						<td colspan="7" style="text-align: center;">Sin pedidos entregados</td>
 
 					</tr>
 					<%
