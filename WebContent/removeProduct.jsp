@@ -46,7 +46,7 @@
 				class="col-md-4 col-md-offset-4"
 				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
-					<h3 style="color: green;">Quitar producto</h3>
+					<h3 style="color: black;">Quitar producto</h3>
 					<%
 					if (message != null) {
 					%>
@@ -60,7 +60,7 @@
 				<div></div>
 				<div class="row">
 					<div class="col-md-12 form-group">
-						<label for="last_name">Product Id</label> <input type="text"
+						<label for="last_name">Id producto</label> <input type="text"
 							placeholder="Enter Product Id" name="prodid" class="form-control"
 							id="last_name" required>
 					</div>

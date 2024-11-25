@@ -43,7 +43,7 @@
 				class="col-md-4 col-md-offset-4"
 				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
-					<h3 style="color: green;">Actualizar producto</h3>
+					<h3 style="color: black;">Actualizar producto</h3>
 					<%
 					if (message != null) {
 					%>

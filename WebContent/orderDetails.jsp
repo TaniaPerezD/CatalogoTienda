@@ -60,28 +60,29 @@
 				<tbody
 					style="background-color: white; font-size: 15px; font-weight: bold;">
 					<%
-					for (OrderDetails order : orders) {
-					%>
+                    for (OrderDetails order : orders) {
+                    %>
 
-					<tr>
-						<td><img src="./ShowImage?pid=<%=order.getProductId()%>"
-							style="width: 50px; height: 50px;"></td>
-						<td><%=order.getProdName()%></td>
-						<td><%=order.getOrderId()%></td>
-						<td><%=order.getQty()%></td>
-						<td><%=order.getAmount()%></td>
-						<td><%=order.getTime()%></td>
-						<td class="text-success"><%=order.getShipped() == 0 ? "ORDER_PLACED" : "ORDER_SHIPPED"%></td>
-					</tr>
+                    <tr>
+                        <td><img src="./ShowImage?pid=<%=order.getProductId()%>"
+                            style="width: 50px; height: 50px;"></td>
+                        <td><%=order.getProdName()%></td>
+                        <td><%=order.getOrderId()%></td>
+                        <td><%=order.getQty()%></td>
+                        <td><%=order.getAmount()%></td>
+                        <td><%=order.getTime()%></td>
+                        <td class="text-success"><%=order.getShipped() == 0 ? "PEDIDO_REALIZADO" : "PEDIDO_ENVIADO"%></td>
+                    </tr>
 
-					<%
-					}
-					%>
+                    <%
+                    }
+                    %>
 
-				</tbody>
-			</table>
-		</div>
-	</div>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 	<!-- ENd of Product Items List -->
 
 

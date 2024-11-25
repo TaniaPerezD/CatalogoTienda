@@ -137,6 +137,13 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public String updateProduct(ProductBean prevProduct, ProductBean updatedProduct) {
         String status = "No se pudo actualizar el producto!";
+
+        if (!prevProduct.getProdId().equals(updatedProduct.getProdId())) {
+
+            status = "No son los mismos productos!";
+
+            return status;
+        }
         Connection con = DBUtil.provideConnection();
         PreparedStatement ps = null;
 
@@ -148,7 +155,7 @@ public class ProductServiceImpl implements ProductService {
             ps.setString(3, updatedProduct.getProdInfo());
             ps.setDouble(4, updatedProduct.getProdPrice());
             ps.setInt(5, updatedProduct.getProdQuantity());
-            ps.setBlob(6, prevProduct.getProdImage());
+            ps.setBlob(6, updatedProduct.getProdImage());
             ps.setString(7, prevProduct.getProdId());
 
             int rows = ps.executeUpdate();
@@ -268,7 +275,7 @@ public class ProductServiceImpl implements ProductService {
 
         if (!prevProductId.equals(updatedProduct.getProdId())) {
 
-            status = "Both Products are Different, Updation Failed!";
+            status = "Los productos son diferentes!";
 
             return status;
         }
@@ -280,21 +287,20 @@ public class ProductServiceImpl implements ProductService {
 
         try {
             ps = con.prepareStatement(
-                    "UPDATE product SET pname = ?, ptype = ?, pinfo = ?, pprice = ?, pquantity = ?, image = ? WHERE pid = ?");
+                    "UPDATE product SET pname = ?, ptype = ?, pinfo = ?, pprice = ?, pquantity = ? WHERE pid = ?");
             ps.setString(1, updatedProduct.getProdName());
             ps.setString(2, updatedProduct.getProdType());
             ps.setString(3, updatedProduct.getProdInfo());
             ps.setDouble(4, updatedProduct.getProdPrice());
             ps.setInt(5, updatedProduct.getProdQuantity());
-            ps.setBlob(6, updatedProduct.getProdImage());
-            ps.setString(7, prevProductId);
+            ps.setString(6, prevProductId);
 
             int k = ps.executeUpdate();
-            // System.out.println("prevQuantity: "+prevQuantity);
+
             if ((k > 0) && (prevQuantity < updatedProduct.getProdQuantity())) {
                 status = "Producto actualizado!";
                 loadProductsFromDatabase(); // Sincronizar con memoria
-                // System.out.println("updated!");
+
                 List<DemandBean> demandList = new DemandServiceImpl().haveDemanded(prevProductId);
 
                 for (DemandBean demand : demandList) {
@@ -304,17 +310,17 @@ public class ProductServiceImpl implements ProductService {
                         MailMessage.productAvailableNow(demand.getUserName(), userFName, updatedProduct.getProdName(),
                                 prevProductId);
                     } catch (Exception e) {
-                        System.out.println("Mail Sending Failed: " + e.getMessage());
+                        System.out.println("No se pudo mandar el correo: " + e.getMessage());
                     }
                     boolean flag = new DemandServiceImpl().removeProduct(demand.getUserName(), prevProductId);
 
                     if (flag)
-                        status += " And Mail Send to the customers who were waiting for this product!";
+                        status += " Se mando el correo a los clientes que esperaban el producto!";
                 }
             } else if (k > 0)
-                status = "Product Updated Successfully!";
+                status = "Producto actualizado!";
             else
-                status = "Product Not available in the store!";
+                status = "Producto no disponible";
 
         } catch (SQLException e) {
             // TODO Auto-generated catch block

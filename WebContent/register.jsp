@@ -51,7 +51,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="last_name">Direcci�n</label>
+					<label for="last_name">Direccion</label>
 					<textarea name="address" class="form-control" id="last_name"
 						name="last_name" required></textarea>
 				</div>
@@ -62,7 +62,7 @@
 							name="last_name" required>
 					</div>
 					<div class="col-md-6 form-group">
-						<label for="last_name">C�digo</label> <input type="number"
+						<label for="last_name">Codigo</label> <input type="number"
 							name="pincode" class="form-control" id="last_name"
 							name="last_name" required>
 					</div>

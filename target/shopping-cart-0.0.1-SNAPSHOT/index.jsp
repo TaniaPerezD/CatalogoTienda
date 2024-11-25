@@ -30,7 +30,7 @@
 		    isValidUser = false;
 		}
 		
-		ProductService prodService = new ProductServiceImpl(); // Cambio aquí
+		ProductService prodService = new ProductServiceImpl(); // Cambio aquï¿½
 		List<ProductBean> products = new ArrayList<ProductBean>();
 		
 		String search = request.getParameter("search");
@@ -89,7 +89,7 @@
 						%>
 						<button type="submit"
 							formaction="./AddtoCart?uid=<%=userName%>&pid=<%=product.getProdId()%>&pqty=1"
-							class="btn btn-success">Añadir al carrito</button>
+							class="btn btn-success">Agregar al carrito</button>
 						&nbsp;&nbsp;&nbsp;
 						<button type="submit"
 							formaction="./AddtoCart?uid=<%=userName%>&pid=<%=product.getProdId()%>&pqty=1"

@@ -7,12 +7,12 @@ public class MailMessage {
 		String recipient = emailId;
 		String subject = "Registro Exitoso";
 		String htmlTextMessage = "" + "<html>" + "<body>"
-				+ "<h2 style='color:green;'>Bienvenido a Gatobyte</h2>" + ""
+				+ "<h2 style='color:pink;'>Bienvenido a Gatobyte</h2>" + ""
 				+ "Hola " + name + ","
 				+ "<br><br>Gracias por registrarte en Gatobyte.<br>"
 				+ "Te invitamos a explorar nuestra última colección de productos electrónicos con descuentos de hasta el 60%."
-				+ "<br>Además, como cliente nuevo, tienes un 10% de descuento adicional (hasta 500 Rs) en tu primera compra."
-				+ "<br>Usa este código promocional:<br><br><br> CÓDIGO PROMO: " + "ELLISON500<br><br><br>"
+				+ "<br>Además, como cliente nuevo, tienes un 10% de descuento adicional (hasta 500 bs) en tu primera compra."
+				+ "<br>Usa este código promocional:<br><br><br> CÓDIGO PROMO: " + "MIAU500<br><br><br>"
 				+ "¡Que tengas un buen día!<br>" + "" + "</body>" + "</html>";
 		try {
 			JavaMailUtil.sendMail(recipient, subject, htmlTextMessage);
@@ -31,8 +31,8 @@ public class MailMessage {
 				+ "Tu pedido ha sido realizado exitosamente y está en proceso de envío.<br/><br/>"
 				+ "<h6>Nota: Este es un correo de demostración, no has realizado una transacción real.</h6>"
 				+ "<br/>Detalles de tu transacción:<br/>"
-				+ "<br/><b>Id de Pedido:</b> <font style=\"color:green;\">" + transId + "</font><br/>"
-				+ "<b>Monto Pagado:</b> <font style=\"color:green;\">" + transAmount + "</font>"
+				+ "<br/><b>Id de Pedido:</b> <font style=\"color:pink;\">" + transId + "</font><br/>"
+				+ "<b>Monto Pagado:</b> <font style=\"color:pink;\">" + transAmount + "</font>"
 				+ "<br/><br/>¡Gracias por tu compra!<br/><br/>"
 				+ "¡Te esperamos de nuevo! <br/><br/><b>Gatobyte.</b>"
 				+ "    </p>" + "  </body>" + "</html>";
@@ -52,8 +52,8 @@ public class MailMessage {
 				+ "Tu pedido ha sido enviado y está en camino.<br/><br/>"
 				+ "<h6>Nota: Este es un correo de demostración, no has realizado una transacción real.</h6>"
 				+ "<br/>Detalles del pedido:<br/>"
-				+ "<b>Id de Pedido:</b> <font style=\"color:green;\">" + transId + "</font><br/>"
-				+ "<b>Monto Pagado:</b> <font style=\"color:green;\">" + transAmount + "</font>"
+				+ "<b>Id de Pedido:</b> <font style=\"color:pink;\">" + transId + "</font><br/>"
+				+ "<b>Monto Pagado:</b> <font style=\"color:pink;\">" + transAmount + "</font>"
 				+ "<br/><br/>¡Gracias por comprar con nosotros!<br/><br/>"
 				+ "¡Te esperamos de nuevo! <br/><br/><b>Gatobyte.</b>"
 				+ "    </p>" + "  </body>" + "</html>";

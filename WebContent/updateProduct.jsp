@@ -51,7 +51,7 @@
 					<div class="form-group">
 						<img src="./ShowImage?pid=<%=product.getProdId()%>"
 							alt="Product Image" height="100px" />
-						<h2 style="color: green;">Actualizar producto</h2>
+						<h2 style="color: black;">Actualizar producto</h2>
 					</div>
 
 					<%

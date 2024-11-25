@@ -27,7 +27,7 @@
 
 	if (userName == null || password == null) {
 
-		response.sendRedirect("login.jsp?message=¡Sesión expirada, inicie sesión de nuevo!");
+		response.sendRedirect("login.jsp?message=sesion expirada, inicie sesion de nuevo!");
 
 	}
 
@@ -115,7 +115,7 @@
 							<input type="number" name="pqty" value="<%=prodQuantity%>"
 								style="max-width: 70px;" min="0"> <input type="hidden"
 								name="pid" value="<%=product.getProdId()%>"> <input
-								type="submit" name="Update" value="Update"
+								type="submit" name="Actualizar" value="Update"
 								style="max-width: 80px;">
 						</form></td>
 					<td><a
