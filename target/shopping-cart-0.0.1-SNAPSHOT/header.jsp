@@ -27,7 +27,7 @@
 		<form class="form-inline" action="index.jsp" method="get">
 			<div class="input-group">
 				<input type="text" class="form-control" size="50" name="search"
-					placeholder="Search Items" required>
+					placeholder="Buscar Producto" required>
 				<div class="input-group-btn">
 					<input type="submit" class="btn btn-danger" value="Search" />
 				</div>
@@ -59,7 +59,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login.jsp">Iniciar sesiï¿½n</a></li>
+					<li><a href="login.jsp">Iniciar sesión</a></li>
 					<li><a href="register.jsp">Registrarse</a></li>
 					<li><a href="index.jsp">Productos</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"

@@ -2,6 +2,8 @@ package com.shashi.srv;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.LinkedList;
+import java.util.Queue;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,99 +24,109 @@ import com.shashi.service.impl.ProductServiceImpl;
  */
 @WebServlet("/AddtoCart")
 public class AddtoCart extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public AddtoCart() {
-		super();
-	}
+    // Estructura de datos de tipo cola para almacenar productos del carrito
+    private Queue<ProductBean> cartQueue = new LinkedList<>();
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+    public AddtoCart() {
+        super();
+    }
 
-		HttpSession session = request.getSession();
-		String userName = (String) session.getAttribute("username");
-		String password = (String) session.getAttribute("password");
-		String usertype = (String) session.getAttribute("usertype");
-		if (userName == null || password == null || usertype == null || !usertype.equalsIgnoreCase("customer")) {
-			response.sendRedirect("login.jsp?message=Session Expired, Login Again to Continue!");
-			return;
-		}
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-		// login Check Successfull
+        HttpSession session = request.getSession();
+        String userName = (String) session.getAttribute("username");
+        String password = (String) session.getAttribute("password");
+        String usertype = (String) session.getAttribute("usertype");
+        if (userName == null || password == null || usertype == null || !usertype.equalsIgnoreCase("customer")) {
+            response.sendRedirect("login.jsp?message=¡Sesión expirada, vuelve a iniciar sesión!");
+            return;
+        }
 
-		String userId = userName;
-		String prodId = request.getParameter("pid");
-		int pQty = Integer.parseInt(request.getParameter("pqty")); // 1
+        // login Check Successfull
 
-		CartServiceImpl cart = new CartServiceImpl();
+        String userId = userName;
+        String prodId = request.getParameter("pid");
+        int pQty = Integer.parseInt(request.getParameter("pqty")); // 1
 
-		ProductServiceImpl productDao = new ProductServiceImpl();
+        CartServiceImpl cart = new CartServiceImpl();
+        ProductServiceImpl productDao = new ProductServiceImpl();
+        ProductBean product = productDao.getProductDetails(prodId);
 
-		ProductBean product = productDao.getProductDetails(prodId);
+        int availableQty = product.getProdQuantity();
+        int cartQty = cart.getProductCount(userId, prodId);
 
-		int availableQty = product.getProdQuantity();
+        pQty += cartQty;
 
-		int cartQty = cart.getProductCount(userId, prodId);
+        PrintWriter pw = response.getWriter();
+        response.setContentType("text/html");
 
-		pQty += cartQty;
+        if (pQty == cartQty) {
+            String status = cart.removeProductFromCart(userId, prodId);
 
-		PrintWriter pw = response.getWriter();
+            // Remover el producto de la cola si es eliminado del carrito
+            cartQueue.removeIf(p -> p.getProdId().equals(prodId));
 
-		response.setContentType("text/html");
-		if (pQty == cartQty) {
-			String status = cart.removeProductFromCart(userId, prodId);
+            RequestDispatcher rd = request.getRequestDispatcher("userHome.jsp");
+            rd.include(request, response);
 
-			RequestDispatcher rd = request.getRequestDispatcher("userHome.jsp");
+            pw.println("<script>document.getElementById('message').innerHTML='" + status + "'</script>");
+        } else if (availableQty < pQty) {
 
-			rd.include(request, response);
+            String status = null;
 
-			pw.println("<script>document.getElementById('message').innerHTML='" + status + "'</script>");
-		} else if (availableQty < pQty) {
+            if (availableQty == 0) {
+                status = "Product is Out of Stock!";
+            } else {
+                cart.updateProductToCart(userId, prodId, availableQty);
+                status = "Solo existen " + availableQty + " unidades " + product.getProdName()
+                        + " en la tienda, estamos poniendo  " + availableQty
+                        + " en tu carrito.";
+            }
 
-			String status = null;
+            // Crear una demanda si no hay suficiente stock
+            DemandBean demandBean = new DemandBean(userName, product.getProdId(), pQty - availableQty);
+            DemandServiceImpl demand = new DemandServiceImpl();
+            boolean flag = demand.addProduct(demandBean);
 
-			if (availableQty == 0) {
-				status = "Product is Out of Stock!";
-			} else {
+            if (flag)
+                status += "<br/>Te mandaremos un correo cuando " + product.getProdName()
+                        + " este disponible de nuevo!";
 
-				cart.updateProductToCart(userId, prodId, availableQty);
+            // Agregar el producto disponible a la cola
+            if (availableQty > 0) {
+                product.setProdQuantity(availableQty);
+                cartQueue.add(product);
+            }
 
-				status = "Only " + availableQty + " no of " + product.getProdName()
-						+ " are available in the shop! So we are adding only " + availableQty
-						+ " products into Your Cart" + "";
-			}
-			DemandBean demandBean = new DemandBean(userName, product.getProdId(), pQty - availableQty);
+            RequestDispatcher rd = request.getRequestDispatcher("cartDetails.jsp");
+            rd.include(request, response);
 
-			DemandServiceImpl demand = new DemandServiceImpl();
+            pw.println("<script>document.getElementById('message').innerHTML='" + status + "'</script>");
+        } else {
+            String status = cart.updateProductToCart(userId, prodId, pQty);
 
-			boolean flag = demand.addProduct(demandBean);
+            // Agregar el producto al carrito y también a la cola
+            product.setProdQuantity(pQty);
+            cartQueue.add(product);
 
-			if (flag)
-				status += "<br/>Later, We Will Mail You when " + product.getProdName()
-						+ " will be available into the Store!";
+            RequestDispatcher rd = request.getRequestDispatcher("userHome.jsp");
+            rd.include(request, response);
 
-			RequestDispatcher rd = request.getRequestDispatcher("cartDetails.jsp");
+            pw.println("<script>document.getElementById('message').innerHTML='" + status + "'</script>");
+        }
+    }
 
-			rd.include(request, response);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-			pw.println("<script>document.getElementById('message').innerHTML='" + status + "'</script>");
+        doGet(request, response);
+    }
 
-		} else {
-			String status = cart.updateProductToCart(userId, prodId, pQty);
-
-			RequestDispatcher rd = request.getRequestDispatcher("userHome.jsp");
-
-			rd.include(request, response);
-
-			pw.println("<script>document.getElementById('message').innerHTML='" + status + "'</script>");
-		}
-
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		doGet(request, response);
-	}
-
+    // Método adicional para mostrar los productos en la cola (opcional)
+    public Queue<ProductBean> getCartQueue() {
+        return cartQueue;
+    }
 }
