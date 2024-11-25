@@ -55,11 +55,11 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="index.jsp"><span
-					class="glyphicon glyphicon-home">&nbsp;</span>Shopping Center</a>
+					class="glyphicon glyphicon-home">&nbsp;</span>Centro de compras</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login.jsp">Iniciar sesión</a></li>
+					<li><a href="login.jsp">Iniciar sesiï¿½n</a></li>
 					<li><a href="register.jsp">Registrarse</a></li>
 					<li><a href="index.jsp">Productos</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
@@ -100,7 +100,7 @@
 					<li><a href="userHome.jsp"><span
 							class="glyphicon glyphicon-home">Productos</span></a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">Categoría <span class="caret"></span>
+						data-toggle="dropdown" href="#">Categorï¿½a <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
 							<li><a href="userHome.jsp?type=mobile">Mobiles</a></li>
@@ -114,7 +114,7 @@
 					if (notf == 0) {
 					%>
 					<li><a href="cartDetails.jsp"> <span
-							class="glyphicon glyphicon-shopping-cart"></span>Cart
+							class="glyphicon glyphicon-shopping-cart"></span>Carrito
 					</a></li>
 
 					<%
@@ -131,7 +131,7 @@
 					%>
 					<li><a href="orderDetails.jsp">Pedidos</a></li>
 					<li><a href="userProfile.jsp">Perfil</a></li>
-					<li><a href="./LogoutSrv">Cerrar sesión</a></li>
+					<li><a href="./LogoutSrv">Cerrar sesiï¿½n</a></li>
 				</ul>
 			</div>
 		</div>
@@ -154,7 +154,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="adminViewProduct.jsp">Productos</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">Categoría <span class="caret"></span>
+						data-toggle="dropdown" href="#">Categorï¿½a <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
 							<li><a href="adminViewProduct.jsp?type=mobile">Mobiles</a></li>
@@ -169,15 +169,15 @@
 					<li><a href="unshippedItems.jsp">Pedidos</a></li>
 					<!-- <li><a href=""> <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Cart</a></li> -->
 					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">Update Items <span
+						data-toggle="dropdown" href="#">Modificar productos <span
 							class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="addProduct.jsp">Add Product</a></li>
-							<li><a href="removeProduct.jsp">Remove Product</a></li>
-							<li><a href="updateProductById.jsp">Update Product</a></li>
+							<li><a href="addProduct.jsp">AÃ±adir producto</a></li>
+							<li><a href="removeProduct.jsp">Quitar producto</a></li>
+							<li><a href="updateProductById.jsp">Actualizar producto</a></li>
 						</ul></li>
-					<li><a href="./LogoutSrv">Logout</a></li>
+					<li><a href="./LogoutSrv">Cerrar sesiÃ³n</a></li>
 
 				</ul>
 			</div>

@@ -43,7 +43,7 @@
 				class="col-md-4 col-md-offset-4"
 				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
-					<h3 style="color: green;">Product Update Form</h3>
+					<h3 style="color: green;">Actualizar producto</h3>
 					<%
 					if (message != null) {
 					%>
@@ -64,11 +64,10 @@
 				</div>
 				<div class="row">
 					<div class="col-md-6 text-center" style="margin-bottom: 2px;">
-						<a href="adminViewProduct.jsp" class="btn btn-info">Cancel</a>
+						<a href="adminViewProduct.jsp" class="btn btn-info">Cancelar</a>
 					</div>
 					<div class="col-md-6 text-center">
-						<button type="submit" class="btn btn-danger">Update
-							Product</button>
+						<button type="submit" class="btn btn-danger">Actualizar</button>
 					</div>
 				</div>
 			</form>

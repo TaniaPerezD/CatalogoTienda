@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Admin Home</title>
+<title>Admin</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -42,20 +42,16 @@
 
 		<div class="tab" align="center">
 			<form>
-				<button type="submit" formaction="adminViewProduct.jsp">View
-					products</button>
+				<button type="submit" formaction="adminViewProduct.jsp">Ver productos</button>
 				<br>
 				<br>
-				<button type="submit" formaction="addProduct.jsp">Add
-					products</button>
+				<button type="submit" formaction="addProduct.jsp">Agregar productos</button>
 				<br>
 				<br>
-				<button type="submit" formaction="removeProduct.jsp">Remove
-					Products</button>
+				<button type="submit" formaction="removeProduct.jsp">Quitar productos</button>
 				<br>
 				<br>
-				<button type="submit" formaction="updateProductById.jsp">Update
-					Products</button>
+				<button type="submit" formaction="updateProductById.jsp">Actualizar productos</button>
 				<br>
 				<br>
 			</form>

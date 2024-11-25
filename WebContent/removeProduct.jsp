@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Remove Product</title>
+<title>Quitar producto</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -46,7 +46,7 @@
 				class="col-md-4 col-md-offset-4"
 				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
-					<h3 style="color: green;">Product Deletion Form</h3>
+					<h3 style="color: green;">Quitar producto</h3>
 					<%
 					if (message != null) {
 					%>
@@ -67,11 +67,10 @@
 				</div>
 				<div class="row">
 					<div class="col-md-6 text-center" style="margin-bottom: 2px;">
-						<a href="adminViewProduct.jsp" class="btn btn-info">Cancel</a>
+						<a href="adminViewProduct.jsp" class="btn btn-info">Cancelar</a>
 					</div>
 					<div class="col-md-6 text-center">
-						<button type="submit" class="btn btn-danger">Remove
-							Product</button>
+						<button type="submit" class="btn btn-danger">Quitar</button>
 					</div>
 				</div>
 			</form>
