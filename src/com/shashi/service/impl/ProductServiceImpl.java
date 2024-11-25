@@ -110,7 +110,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public String removeProduct(String prodId) {
-        String status = "No se pudo borrar el producto!";
+        // String status = "No se pudo borrar el producto!";
+        String status = null;
         Connection con = DBUtil.provideConnection();
         PreparedStatement ps = null;
 
