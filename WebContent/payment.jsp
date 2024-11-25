@@ -46,11 +46,11 @@
 			style="margin-top: 5px; margin-left: 2px; margin-right: 2px;">
 			<form action="./OrderServlet" method="post"
 				class="col-md-6 col-md-offset-3"
-				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
+				style="border: 2px; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
 					<div class="form-group">
 						<img src="images/profile.jpg" alt="Payment Proceed" height="100px" />
-						<h2 style="color: black;">Pagar con tarjeta de crédito</h2>
+						<h2 style="color: black;">Pagar con tarjeta de credito</h2>
 					</div>
 				</div>
 				<div class="row">
