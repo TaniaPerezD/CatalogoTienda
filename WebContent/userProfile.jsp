@@ -27,7 +27,7 @@
 
 	if (userName == null || password == null) {
 
-		response.sendRedirect("login.jsp?message=¡Sesión expirada, inicie sesión de nuevo!");
+		response.sendRedirect("login.jsp?message=sesion expirada, inicie sesion de nuevo!");
 	}
 
 	UserService dao = new UserServiceImpl();
@@ -101,7 +101,7 @@
 						<hr>
 						<div class="row">
 							<div class="col-sm-3">
-								<p class="mb-0">Número</p>
+								<p class="mb-0">Numero</p>
 							</div>
 							<div class="col-sm-9">
 								<p class="text-muted mb-0"><%=user.getMobile()%>
@@ -111,7 +111,7 @@
 						<hr>
 						<div class="row">
 							<div class="col-sm-3">
-								<p class="mb-0">Dirección</p>
+								<p class="mb-0">direccion</p>
 							</div>
 							<div class="col-sm-9">
 								<p class="text-muted mb-0"><%=user.getAddress()%>
@@ -121,7 +121,7 @@
 						<hr>
 						<div class="row">
 							<div class="col-sm-3">
-								<p class="mb-0">Código</p>
+								<p class="mb-0">Codigo</p>
 							</div>
 							<div class="col-sm-9">
 								<p class="text-muted mb-0"><%=user.getPinCode()%>

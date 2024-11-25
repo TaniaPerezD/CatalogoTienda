@@ -30,7 +30,7 @@
 					<%
 					if (message != null) {
 					%>
-					<p style="color: blue;">
+					<p style="color: black;">
 						<%=message%>
 					</p>
 					<%
@@ -51,7 +51,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="last_name">Dirección</label>
+					<label for="last_name">Direcciï¿½n</label>
 					<textarea name="address" class="form-control" id="last_name"
 						name="last_name" required></textarea>
 				</div>
@@ -62,7 +62,7 @@
 							name="last_name" required>
 					</div>
 					<div class="col-md-6 form-group">
-						<label for="last_name">Código</label> <input type="number"
+						<label for="last_name">Cï¿½digo</label> <input type="number"
 							name="pincode" class="form-control" id="last_name"
 							name="last_name" required>
 					</div>
@@ -70,12 +70,12 @@
 				</div>
 				<div class="row">
 					<div class="col-md-6 form-group">
-						<label for="last_name">Contraseña</label> <input type="password"
+						<label for="last_name">Contraseï¿½a</label> <input type="password"
 							name="password" class="form-control" id="last_name"
 							name="last_name" required>
 					</div>
 					<div class="col-md-6 form-group">
-						<label for="last_name">Confirmar contraseña</label> <input
+						<label for="last_name">Confirmar contraseï¿½a</label> <input
 							type="password" name="confirmPassword" class="form-control"
 							id="last_name" name="last_name" required>
 					</div>

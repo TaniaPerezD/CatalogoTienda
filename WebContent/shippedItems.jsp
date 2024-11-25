@@ -22,13 +22,13 @@
 
 	if (userType == null || !userType.equals("admin")) {
 
-		response.sendRedirect("login.jsp?message=Access Denied, Login as admin!!");
+		response.sendRedirect("login.jsp?message=acceso denegado, Login as admin!!");
 
 	}
 
 	else if (userName == null || password == null) {
 
-		response.sendRedirect("login.jsp?message=¡Sesión expirada, inicie sesión de nuevo!");
+		response.sendRedirect("login.jsp?message=sesion expirada, inicie sesion de nuevo!");
 
 	}
 	%>
@@ -41,12 +41,12 @@
 		<div class="table-responsive ">
 			<table class="table table-hover table-sm">
 				<thead
-					style="background-color: #115884; color: white; font-size: 18px;">
+					style="background-color: #fac491; color: white; font-size: 18px;">
 					<tr>
 						<th>Id Pedido</th>
 						<th>Id Producto</th>
 						<th>Correo</th>
-						<th>Dirección</th>
+						<th>direccion</th>
 						<th>Cantidad</th>
 						<th>Total</th>
 						<td>Estado</td>

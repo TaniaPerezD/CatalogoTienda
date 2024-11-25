@@ -70,12 +70,12 @@
 				</div>
 				<div class="row">
 					<div class="col-md-6 form-group">
-						<label for="last_name">Contrase�a</label> <input type="password"
+						<label for="last_name">Clave de acceso�a</label> <input type="password"
 							name="password" class="form-control" id="last_name"
 							name="last_name" required>
 					</div>
 					<div class="col-md-6 form-group">
-						<label for="last_name">Confirmar contrase�a</label> <input
+						<label for="last_name">Confirmar Clave de acceso�a</label> <input
 							type="password" name="confirmPassword" class="form-control"
 							id="last_name" name="last_name" required>
 					</div>

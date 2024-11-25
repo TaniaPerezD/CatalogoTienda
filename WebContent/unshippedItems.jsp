@@ -44,12 +44,12 @@
 		<div class="table-responsive ">
 			<table class="table table-hover table-sm">
 				<thead
-					style="background-color: #700fb7; color: white; font-size: 16px;">
+					style="background-color: #fac491; color: white; font-size: 16px;">
 					<tr>
 						<th>Id Pedido</th>
 						<th>Id Producto</th>
 						<th>Correo</th>
-						<th>Dirección</th>
+						<th>direccion</th>
 						<th>Cantidad</th>
 						<th>Estado</th>
 						<th>Acción</th>
@@ -83,7 +83,7 @@
 						<td>READY_TO_SHIP</td>
 						<td><a
 							href="ShipmentServlet?orderid=<%=order.getTransactionId()%>&amount=<%=order.getAmount()%>&userid=<%=userId%>&prodid=<%=order.getProductId()%>"
-							class="btn btn-success">Entregagr</a></td>
+							class="btn btn-success">Entregar</a></td>
 					</tr>
 
 					<%

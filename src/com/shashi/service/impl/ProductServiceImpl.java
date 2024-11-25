@@ -78,7 +78,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public String addProduct(ProductBean product) {
-        String status = "¡No se pudo registrar el producto!";
+        String status = "No se pudo registrar el producto!";
         Connection con = DBUtil.provideConnection();
         PreparedStatement ps = null;
 
@@ -94,7 +94,7 @@ public class ProductServiceImpl implements ProductService {
 
             int rows = ps.executeUpdate();
             if (rows > 0) {
-                status = "¡Producto agregado!";
+                status = "Producto agregado!";
                 loadProductsFromDatabase(); // Sincronizar con memoria
             }
         } catch (SQLException e) {
@@ -110,7 +110,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public String removeProduct(String prodId) {
-        String status = "¡No se pudo borrar el producto!";
+        String status = "No se pudo borrar el producto!";
         Connection con = DBUtil.provideConnection();
         PreparedStatement ps = null;
 
@@ -120,7 +120,7 @@ public class ProductServiceImpl implements ProductService {
 
             int rows = ps.executeUpdate();
             if (rows > 0) {
-                status = "¡Producto eliminado!";
+                status = "Producto eliminado!";
                 loadProductsFromDatabase(); // Sincronizar con memoria
             }
         } catch (SQLException e) {
@@ -136,7 +136,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public String updateProduct(ProductBean prevProduct, ProductBean updatedProduct) {
-        String status = "¡No se pudo actualizar el producto!";
+        String status = "No se pudo actualizar el producto!";
         Connection con = DBUtil.provideConnection();
         PreparedStatement ps = null;
 
@@ -153,7 +153,7 @@ public class ProductServiceImpl implements ProductService {
 
             int rows = ps.executeUpdate();
             if (rows > 0) {
-                status = "¡Producto actualizado!";
+                status = "Producto actualizado!";
                 loadProductsFromDatabase(); // Sincronizar con memoria
             }
         } catch (SQLException e) {
@@ -169,7 +169,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public String updateProductPrice(String prodId, double updatedPrice) {
-        String status = "¡No se pudo actualizar el precio!";
+        String status = "No se pudo actualizar el precio!";
         Connection con = DBUtil.provideConnection();
         PreparedStatement ps = null;
 
@@ -180,7 +180,7 @@ public class ProductServiceImpl implements ProductService {
 
             int rows = ps.executeUpdate();
             if (rows > 0) {
-                status = "¡Precio actualizado!";
+                status = "Precio actualizado!";
                 loadProductsFromDatabase(); // Sincronizar con memoria
             }
         } catch (SQLException e) {
@@ -264,7 +264,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public String updateProductWithoutImage(String prevProductId, ProductBean updatedProduct) {
 
-        String status = "¡No se pudo actualizar el precio!";
+        String status = "No se pudo actualizar el precio!";
 
         if (!prevProductId.equals(updatedProduct.getProdId())) {
 
@@ -292,7 +292,7 @@ public class ProductServiceImpl implements ProductService {
             int k = ps.executeUpdate();
             // System.out.println("prevQuantity: "+prevQuantity);
             if ((k > 0) && (prevQuantity < updatedProduct.getProdQuantity())) {
-                status = "¡Producto actualizado!";
+                status = "Producto actualizado!";
                 loadProductsFromDatabase(); // Sincronizar con memoria
                 // System.out.println("updated!");
                 List<DemandBean> demandList = new DemandServiceImpl().haveDemanded(prevProductId);

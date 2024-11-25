@@ -25,7 +25,7 @@
 
 	if (userName == null || password == null) {
 
-		response.sendRedirect("login.jsp?message=¡Sesión expirada, inicie sesión de nuevo!");
+		response.sendRedirect("login.jsp?message=sesion expirada, inicie sesion de nuevo!");
 	}
 
 	String sAmount = request.getParameter("amount");
@@ -62,7 +62,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12 form-group">
-						<label for="last_name">Número de la tarjeta</label> <input
+						<label for="last_name">Numero de la tarjeta</label> <input
 							type="number" placeholder="4242-4242-4242-4242" name="cardnumber"
 							class="form-control" id="last_name" required>
 					</div>

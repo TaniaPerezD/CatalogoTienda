@@ -26,7 +26,7 @@
 		<h6>Todo en un click</h6>
 		<form class="form-inline" action="index.jsp" method="get">
 			<div class="input-group">
-				<input type="text" class="form-control" size="50" name="search"
+				<input type="text" class="form-control" size="50" name="buscar"
 					placeholder="Buscar Producto" required>
 				<div class="input-group-btn">
 					<input type="submit" class="btn btn-danger" value="Search" />
@@ -59,7 +59,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login.jsp">Iniciar sesión</a></li>
+					<li><a href="login.jsp">Iniciar sesion</a></li>
 					<li><a href="register.jsp">Registrarse</a></li>
 					<li><a href="index.jsp">Productos</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
@@ -131,7 +131,7 @@
 					%>
 					<li><a href="orderDetails.jsp">Pedidos</a></li>
 					<li><a href="userProfile.jsp">Perfil</a></li>
-					<li><a href="./LogoutSrv">Cerrar sesión</a></li>
+					<li><a href="./LogoutSrv">Cerrar sesion</a></li>
 				</ul>
 			</div>
 		</div>
@@ -154,7 +154,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="adminViewProduct.jsp">Productos</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">Categoría <span class="caret"></span>
+						data-toggle="dropdown" href="#">Categoria <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
 							<li><a href="index.jsp?type=carne">Carne</a></li>
@@ -173,11 +173,11 @@
 							class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="addProduct.jsp">Añadir producto</a></li>
+							<li><a href="addProduct.jsp">Agregar producto</a></li>
 							<li><a href="removeProduct.jsp">Quitar producto</a></li>
 							<li><a href="updateProductById.jsp">Actualizar producto</a></li>
 						</ul></li>
-					<li><a href="./LogoutSrv">Cerrar sesión</a></li>
+					<li><a href="./LogoutSrv">Cerrar sesion</a></li>
 
 				</ul>
 			</div>

@@ -48,9 +48,9 @@ public class CartServiceImpl implements CartService {
 
 					status = updateProductToCart(userId, prodId, availableQty);
 
-					status = "Only " + availableQty + " no of " + product.getProdName()
-							+ " are available in the shop! So we are adding only " + availableQty
-							+ " no of that item into Your Cart" + "";
+					status = "Solo existen" + availableQty + " de " + product.getProdName()
+							+ " Se están agregando" + availableQty
+							+ " En tu carrito" + "";
 
 					DemandBean demandBean = new DemandBean(userId, product.getProdId(), prodQty - availableQty);
 
@@ -59,8 +59,8 @@ public class CartServiceImpl implements CartService {
 					boolean flag = demand.addProduct(demandBean);
 
 					if (flag)
-						status += "<br/>Later, We Will Mail You when " + product.getProdName()
-								+ " will be available into the Store!";
+						status += "<br/>Te manderemos un mensaje " + product.getProdName()
+								+ " cuando esté disponible de nuevo!";
 
 				} else {
 					status = updateProductToCart(userId, prodId, prodQty);

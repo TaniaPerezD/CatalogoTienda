@@ -41,7 +41,7 @@ public class AddtoCart extends HttpServlet {
         String password = (String) session.getAttribute("password");
         String usertype = (String) session.getAttribute("usertype");
         if (userName == null || password == null || usertype == null || !usertype.equalsIgnoreCase("customer")) {
-            response.sendRedirect("login.jsp?message=¡Sesión expirada, vuelve a iniciar sesión!");
+            response.sendRedirect("login.jsp?message=sesion expirada, vuelve a Iniciar sesion!");
             return;
         }
 
@@ -78,7 +78,7 @@ public class AddtoCart extends HttpServlet {
             String status = null;
 
             if (availableQty == 0) {
-                status = "Product is Out of Stock!";
+                status = "Producto fuera de stock!";
             } else {
                 cart.updateProductToCart(userId, prodId, availableQty);
                 status = "Solo existen " + availableQty + " unidades " + product.getProdName()

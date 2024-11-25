@@ -28,10 +28,10 @@
 		response.sendRedirect("updateProductById.jsp?message=Please Enter a valid product Id");
 		return;
 	} else if (utype == null || !utype.equals("admin")) {
-		response.sendRedirect("login.jsp?message=Access Denied, Login as admin!!");
+		response.sendRedirect("login.jsp?message=acceso denegado, Login as admin!!");
 		return;
 	} else if (uname == null || pwd == null) {
-		response.sendRedirect("login.jsp?message=¡Sesión expirada, inicie sesión de nuevo!");
+		response.sendRedirect("login.jsp?message=sesion expirada, inicie sesion de nuevo!");
 		return;
 	}
 	%>
@@ -78,7 +78,7 @@
 						<%
 						String ptype = product.getProdType();
 						%>
-						<label for="producttype">Categoría </label> <select name="type"
+						<label for="producttype">Categoria </label> <select name="type"
 							id="producttype" class="form-control" required>
 							<option value="carne"
 								<%="mobile".equalsIgnoreCase(ptype) ? "selected" : ""%>>Carne</option>

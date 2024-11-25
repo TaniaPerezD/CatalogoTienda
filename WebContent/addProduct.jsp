@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Añadir producto</title>
+<title>Agregar producto</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -23,13 +23,13 @@
 
 	if (userType == null || !userType.equals("admin")) {
 
-		response.sendRedirect("login.jsp?message=Access Denied, Login as admin!!");
+		response.sendRedirect("login.jsp?message=acceso denegado, Login as admin!!");
 
 	}
 
 	else if (userName == null || password == null) {
 
-		response.sendRedirect("login.jsp?message=¡Sesión expirada, inicie sesión de nuevo!");
+		response.sendRedirect("login.jsp?message=sesion expirada, inicie sesion de nuevo!");
 
 	}
 	%>
@@ -65,7 +65,7 @@
 							id="last_name" required>
 					</div>
 					<div class="col-md-6 form-group">
-						<label for="producttype">Categoría</label> <select name="type"
+						<label for="producttype">Categoria</label> <select name="type"
 							id="producttype" class="form-control" required>
 							<option value="carne">Carne</option>
 							<option value="tv">Frutas</option>
