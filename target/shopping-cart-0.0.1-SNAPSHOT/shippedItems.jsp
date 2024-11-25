@@ -36,7 +36,7 @@
 	<jsp:include page="header.jsp" />
 
 	<div class="text-center"
-		style="color: green; font-size: 24px; font-weight: bold;">Pedidos finalizados</div>
+		style="color: black; font-size: 24px; font-weight: bold;">Pedidos finalizados</div>
 	<div class="container-fluid">
 		<div class="table-responsive ">
 			<table class="table table-hover table-sm">

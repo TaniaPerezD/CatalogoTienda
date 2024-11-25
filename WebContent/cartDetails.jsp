@@ -61,16 +61,13 @@
 	<jsp:include page="header.jsp" />
 
 	<div class="text-center"
-		style="color: black; font-size: 24px; font-weight: bold;">Cart
-		Items</div>
-	<!-- <script>document.getElementById('mycart').innerHTML='<i data-count="20" class="fa fa-shopping-cart fa-3x icon-white badge" style="background-color:#333;margin:0px;padding:0px; margin-top:5px;"></i>'</script>
- -->
+		style="color: black; font-size: 24px; font-weight: bold;">Productos del carrito</div>
 	<!-- Start of Product Items List -->
 	<div class="container">
 
 		<table class="table table-hover">
 			<thead
-				style="background-color: #186188; color: white; font-size: 16px; font-weight: bold;">
+				style="background-color: #fac491; color: white; font-size: 16px; font-weight: bold;">
 				<tr>
 					<th>Imagen</th>
 					<th>Productos</th>

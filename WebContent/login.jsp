@@ -63,7 +63,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<button type="submit" class="btn btn-success">Iniciar sesi�n</button>
+						<button type="submit" class="btn btn-success">Iniciar sesion</button>
 					</div>
 				</div>
 			</form>

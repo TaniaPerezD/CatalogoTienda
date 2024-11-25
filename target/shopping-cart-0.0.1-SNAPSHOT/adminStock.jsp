@@ -39,7 +39,7 @@
 	<jsp:include page="header.jsp" />
 
 	<div class="text-center"
-		style="color: green; font-size: 24px; font-weight: bold;">Stock
+		style="color: black; font-size: 24px; font-weight: bold;">Stock
 		Products</div>
 	<div class="container-fluid">
 		<div class="table-responsive ">
