@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Add Product</title>
+<title>Añadir Producto</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -46,7 +46,7 @@
 				enctype="multipart/form-data" class="col-md-6 col-md-offset-3"
 				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
-					<h2 style="color: green;">Product Addition Form</h2>
+					<h2 style="color: green;">Añadir producto</h2>
 					<%
 					if (message != null) {
 					%>
@@ -60,12 +60,12 @@
 				<div></div>
 				<div class="row">
 					<div class="col-md-6 form-group">
-						<label for="last_name">Product Name</label> <input type="text"
+						<label for="last_name">Nombre</label> <input type="text"
 							placeholder="Enter Product Name" name="name" class="form-control"
 							id="last_name" required>
 					</div>
 					<div class="col-md-6 form-group">
-						<label for="producttype">Product Type</label> <select name="type"
+						<label for="producttype">Categoría</label> <select name="type"
 							id="producttype" class="form-control" required>
 							<option value="mobile">MOBILE</option>
 							<option value="tv">TV</option>
@@ -78,34 +78,34 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="last_name">Product Description</label>
+					<label for="last_name">Descripción</label>
 					<textarea name="info" class="form-control" id="last_name" required></textarea>
 				</div>
 				<div class="row">
 					<div class="col-md-6 form-group">
-						<label for="last_name">Unit Price</label> <input type="number"
+						<label for="last_name">Precio</label> <input type="number"
 							placeholder="Enter Unit Price" name="price" class="form-control"
 							id="last_name" required>
 					</div>
 					<div class="col-md-6 form-group">
-						<label for="last_name">Stock Quantity</label> <input type="number"
+						<label for="last_name">Stock</label> <input type="number"
 							placeholder="Enter Stock Quantity" name="quantity"
 							class="form-control" id="last_name" required>
 					</div>
 				</div>
 				<div>
 					<div class="col-md-12 form-group">
-						<label for="last_name">Product Image</label> <input type="file"
+						<label for="last_name">Imagen</label> <input type="file"
 							placeholder="Select Image" name="image" class="form-control"
 							id="last_name" required>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-6 text-center" style="margin-bottom: 2px;">
-						<button type="reset" class="btn btn-danger">Reset</button>
+						<button type="reset" class="btn btn-danger">Limpiar campos</button>
 					</div>
 					<div class="col-md-6 text-center">
-						<button type="submit" class="btn btn-success">Add Product</button>
+						<button type="submit" class="btn btn-success">Añadir</button>
 					</div>
 				</div>
 			</form>
