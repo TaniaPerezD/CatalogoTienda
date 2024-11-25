@@ -25,7 +25,7 @@
 
 	if (userType == null || !userType.equals("admin")) {
 
-		response.sendRedirect("login.jsp?message=Access Denied, Login as admin!!");
+		response.sendRedirect("login.jsp?message=¡Se requiere permisos de admin!");
 
 	}
 

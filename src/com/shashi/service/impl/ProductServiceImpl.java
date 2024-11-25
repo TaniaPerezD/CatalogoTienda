@@ -148,7 +148,7 @@ public class ProductServiceImpl implements ProductService {
             ps.setString(3, updatedProduct.getProdInfo());
             ps.setDouble(4, updatedProduct.getProdPrice());
             ps.setInt(5, updatedProduct.getProdQuantity());
-            ps.setBlob(6, updatedProduct.getProdImage());
+            ps.setBlob(6, prevProduct.getProdImage());
             ps.setString(7, prevProduct.getProdId());
 
             int rows = ps.executeUpdate();

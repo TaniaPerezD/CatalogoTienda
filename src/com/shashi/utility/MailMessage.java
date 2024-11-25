@@ -24,7 +24,7 @@ public class MailMessage {
 
 	public static void transactionSuccess(String recipientEmail, String name, String transId, double transAmount) {
 		String recipient = recipientEmail;
-		String subject = "Pedido Realizado en Ellison Electronics";
+		String subject = "Pedido Realizado en ";
 		String htmlTextMessage = "<html>" + "  <body>" + "    <p>"
 				+ "Hola " + name + ",<br/><br/>"
 				+ "Gracias por comprar en Gatobyte.<br/>"

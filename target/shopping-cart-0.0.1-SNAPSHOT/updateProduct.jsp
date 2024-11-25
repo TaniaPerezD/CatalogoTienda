@@ -80,18 +80,16 @@
 						%>
 						<label for="producttype">Categoría </label> <select name="type"
 							id="producttype" class="form-control" required>
-							<option value="mobile"
-								<%="mobile".equalsIgnoreCase(ptype) ? "selected" : ""%>>MOBILE</option>
-							<option value="tv"
-								<%="tv".equalsIgnoreCase(ptype) ? "selected" : ""%>>TV</option>
-							<option value="camera"
-								<%="camera".equalsIgnoreCase(ptype) ? "selected" : ""%>>CAMERA</option>
-							<option value="laptop"
-								<%="laptop".equalsIgnoreCase(ptype) ? "selected" : ""%>>LAPTOP</option>
-							<option value="tablet"
-								<%="tablet".equalsIgnoreCase(ptype) ? "selected" : ""%>>TABLET</option>
-							<option value="speaker"
-								<%="speaker".equalsIgnoreCase(ptype) ? "selected" : ""%>>SPEAKER</option>
+							<option value="carne"
+								<%="mobile".equalsIgnoreCase(ptype) ? "selected" : ""%>>Carne</option>
+							<option value="frutas"
+								<%="tv".equalsIgnoreCase(ptype) ? "selected" : ""%>>Frutas</option>
+							<option value="verduras"
+								<%="camera".equalsIgnoreCase(ptype) ? "selected" : ""%>>Verduras</option>
+							<option value="panes"
+								<%="laptop".equalsIgnoreCase(ptype) ? "selected" : ""%>>Panes</option>
+							<option value="lacteos"
+								<%="tablet".equalsIgnoreCase(ptype) ? "selected" : ""%>>Lacteos</option>
 							<option value="otra"
 								<%="other".equalsIgnoreCase(ptype) ? "selected" : ""%>>Otra</option>
 						</select>

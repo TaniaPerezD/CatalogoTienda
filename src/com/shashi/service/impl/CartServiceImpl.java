@@ -155,7 +155,7 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public String removeProductFromCart(String userId, String prodId) {
-		String status = "Product Removal Failed";
+		String status = "No se pudo quitar el producto del carrito";
 
 		Connection con = DBUtil.provideConnection();
 
@@ -190,7 +190,7 @@ public class CartServiceImpl implements CartService {
 					int k = ps2.executeUpdate();
 
 					if (k > 0)
-						status = "Product Successfully removed from the Cart!";
+						status = "Producto quitado del carrito!";
 				} else if (prodQuantity <= 0) {
 
 					ps2 = con.prepareStatement("delete from usercart where username=? and prodid=?");
@@ -202,12 +202,12 @@ public class CartServiceImpl implements CartService {
 					int k = ps2.executeUpdate();
 
 					if (k > 0)
-						status = "Product Successfully removed from the Cart!";
+						status = "Producto actualizado!!";
 				}
 
 			} else {
 
-				status = "Product Not Available in the cart!";
+				status = "Producto no disponible en el carrito!";
 
 			}
 
@@ -259,7 +259,7 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public String updateProductToCart(String userId, String prodId, int prodQty) {
 
-		String status = "Failed to Add into Cart";
+		String status = "No se pudo agregar al carrito";
 
 		Connection con = DBUtil.provideConnection();
 
@@ -290,7 +290,7 @@ public class CartServiceImpl implements CartService {
 					int k = ps2.executeUpdate();
 
 					if (k > 0)
-						status = "Product Successfully Updated to Cart!";
+						status = "Producto actualizado!";
 				} else if (prodQty == 0) {
 					ps2 = con.prepareStatement("delete from usercart where username=? and prodid=?");
 
@@ -301,7 +301,7 @@ public class CartServiceImpl implements CartService {
 					int k = ps2.executeUpdate();
 
 					if (k > 0)
-						status = "Product Successfully Updated in Cart!";
+						status = "Producto actualizado!";
 				}
 			} else {
 
@@ -316,7 +316,7 @@ public class CartServiceImpl implements CartService {
 				int k = ps2.executeUpdate();
 
 				if (k > 0)
-					status = "Product Successfully Updated to Cart!";
+					status = "Producto actualizado!";
 
 			}
 
