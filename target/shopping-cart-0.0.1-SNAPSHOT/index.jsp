@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Ellison Electronics</title>
+<title>GatoByte</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -21,35 +21,36 @@
 	<%
 	/* Checking the user credentials */
 	String userName = (String) session.getAttribute("username");
-	String password = (String) session.getAttribute("password");
-	String userType = (String) session.getAttribute("usertype");
-
-	boolean isValidUser = true;
-
-	if (userType == null || userName == null || password == null || !userType.equals("customer")) {
-
-		isValidUser = false;
-	}
-
-	ProductServiceImpl prodDao = new ProductServiceImpl();
-	List<ProductBean> products = new ArrayList<ProductBean>();
-
-	String search = request.getParameter("search");
-	String type = request.getParameter("type");
-	String message = "All Products";
-	if (search != null) {
-		products = prodDao.searchAllProducts(search);
-		message = "Showing Results for '" + search + "'";
-	} else if (type != null) {
-		products = prodDao.getAllProductsByType(type);
-		message = "Showing Results for '" + type + "'";
-	} else {
-		products = prodDao.getAllProducts();
-	}
-	if (products.isEmpty()) {
-		message = "No items found for the search '" + (search != null ? search : type) + "'";
-		products = prodDao.getAllProducts();
-	}
+		String password = (String) session.getAttribute("password");
+		String userType = (String) session.getAttribute("usertype");
+		
+		boolean isValidUser = true;
+		
+		if (userType == null || userName == null || password == null || !userType.equals("customer")) {
+		    isValidUser = false;
+		}
+		
+		ProductService prodService = new ProductServiceImpl(); // Cambio aquí
+		List<ProductBean> products = new ArrayList<ProductBean>();
+		
+		String search = request.getParameter("search");
+		String type = request.getParameter("type");
+		String message = "All Products";
+		
+		if (search != null) {
+		    products = prodService.searchAllProducts(search); // Recupera desde LinkedList
+		    message = "Showing Results for '" + search + "'";
+		} else if (type != null) {
+		    products = prodService.getAllProductsByType(type); // Recupera desde LinkedList
+		    message = "Showing Results for '" + type + "'";
+		} else {
+		    products = prodService.getAllProducts(); // Recupera desde LinkedList
+		}
+		
+		if (products.isEmpty()) {
+		    message = "No items found for the search '" + (search != null ? search : type) + "'";
+		    products = prodService.getAllProducts();
+		}
 	%>
 
 	<jsp:include page="header.jsp" />
@@ -88,17 +89,17 @@
 						%>
 						<button type="submit"
 							formaction="./AddtoCart?uid=<%=userName%>&pid=<%=product.getProdId()%>&pqty=1"
-							class="btn btn-success">Add to Cart</button>
+							class="btn btn-success">Añadir al carrito</button>
 						&nbsp;&nbsp;&nbsp;
 						<button type="submit"
 							formaction="./AddtoCart?uid=<%=userName%>&pid=<%=product.getProdId()%>&pqty=1"
-							class="btn btn-primary">Buy Now</button>
+							class="btn btn-primary">Comprar ahora</button>
 						<%
 						} else {
 						%>
 						<button type="submit"
 							formaction="./AddtoCart?uid=<%=userName%>&pid=<%=product.getProdId()%>&pqty=0"
-							class="btn btn-danger">Remove From Cart</button>
+							class="btn btn-danger">Quitar del carrito</button>
 						&nbsp;&nbsp;&nbsp;
 						<button type="submit" formaction="cartDetails.jsp"
 							class="btn btn-success">Checkout</button>
