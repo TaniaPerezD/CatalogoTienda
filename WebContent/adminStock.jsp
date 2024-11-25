@@ -39,13 +39,12 @@
 	<jsp:include page="header.jsp" />
 
 	<div class="text-center"
-		style="color: black; font-size: 24px; font-weight: bold;">Stock
-		Products</div>
+		style="color: black; font-size: 24px; font-weight: bold;">Stock de productos</div>
 	<div class="container-fluid">
 		<div class="table-responsive ">
 			<table class="table table-hover table-sm">
 				<thead
-					style="background-color: #2c6c4b; color: white; font-size: 18px;">
+					style="background-color: #fac491; color: white; font-size: 18px;">
 					<tr>
 						<th>Imagen</th>
 						<th>Producto Id</th>
