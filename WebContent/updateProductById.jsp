@@ -57,8 +57,8 @@
 				<div></div>
 				<div class="row">
 					<div class="col-md-12 form-group">
-						<label for="last_name">Product Id</label> <input type="text"
-							placeholder="Enter Product Id" name="prodid" class="form-control"
+						<label for="last_name">Id Producto</label> <input type="text"
+							placeholder="Id Producto" name="prodid" class="form-control"
 							id="last_name" required>
 					</div>
 				</div>

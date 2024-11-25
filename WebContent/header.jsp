@@ -26,7 +26,7 @@
 		<h6>Todo en un click</h6>
 		<form class="form-inline" action="index.jsp" method="get">
 			<div class="input-group">
-				<input type="text" class="form-control" size="50" name="buscar"
+				<input type="text" class="form-control" size="50" name="search"
 					placeholder="Buscar Producto" required>
 				<div class="input-group-btn">
 					<input type="submit" class="btn btn-danger" value="Search" />

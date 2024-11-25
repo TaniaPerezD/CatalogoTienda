@@ -71,7 +71,7 @@
 				<div class="row">
 					<div class="col-md-6 form-group">
 						<label for="last_name">Nombre</label> <input type="text"
-							placeholder="Enter Product Name" name="name" class="form-control"
+							placeholder="Nombre" name="name" class="form-control"
 							value="<%=product.getProdName()%>" id="last_name" required>
 					</div>
 					<div class="col-md-6 form-group">
@@ -96,7 +96,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="last_name">Descripción</label>
+					<label for="last_name">Descripcion</label>
 					<textarea name="info" class="form-control text-align-left"
 						id="last_name" required><%=product.getProdInfo()%></textarea>
 				</div>
@@ -104,13 +104,13 @@
 					<div class="col-md-6 form-group">
 						<label for="last_name">Precio</label> <input type="number"
 							value="<%=product.getProdPrice()%>"
-							placeholder="Enter Unit Price" name="price" class="form-control"
+							placeholder="Precio" name="price" class="form-control"
 							id="last_name" required>
 					</div>
 					<div class="col-md-6 form-group">
 						<label for="last_name">Stock</label> <input type="number"
 							value="<%=product.getProdQuantity()%>"
-							placeholder="Enter Stock Quantity" class="form-control"
+							placeholder="Stock " class="form-control"
 							id="last_name" name="quantity" required>
 					</div>
 				</div>

@@ -26,7 +26,7 @@
 
 	if (userType == null || !userType.equals("admin")) {
 
-		response.sendRedirect("login.jsp?message=acceso denegado, Login as admin!!");
+		response.sendRedirect("login.jsp?message=acceso denegado!!");
 
 	}
 
@@ -80,7 +80,7 @@
 					</p>
 					<p class="productinfo"><%=product.getProdInfo()%></p>
 					<p class="price">
-						Rs
+						Bs
 						<%=product.getProdPrice()%>
 					</p>
 					<form method="post">

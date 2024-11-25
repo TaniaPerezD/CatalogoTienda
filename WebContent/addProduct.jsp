@@ -61,7 +61,7 @@
 				<div class="row">
 					<div class="col-md-6 form-group">
 						<label for="last_name">Nombre</label> <input type="text"
-							placeholder="Enter Product Name" name="name" class="form-control"
+							placeholder="Nombre" name="name" class="form-control"
 							id="last_name" required>
 					</div>
 					<div class="col-md-6 form-group">
@@ -77,25 +77,25 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="last_name">Descripción</label>
+					<label for="last_name">Descripcion</label>
 					<textarea name="info" class="form-control" id="last_name" required></textarea>
 				</div>
 				<div class="row">
 					<div class="col-md-6 form-group">
 						<label for="last_name">Precio</label> <input type="number"
-							placeholder="Enter Unit Price" name="price" class="form-control"
+							placeholder="Precio" name="price" class="form-control"
 							id="last_name" required>
 					</div>
 					<div class="col-md-6 form-group">
 						<label for="last_name">Stock</label> <input type="number"
-							placeholder="Enter Stock Quantity" name="quantity"
+							placeholder="Stock" name="quantity"
 							class="form-control" id="last_name" required>
 					</div>
 				</div>
 				<div>
 					<div class="col-md-12 form-group">
 						<label for="last_name">Imagen</label> <input type="file"
-							placeholder="Select Image" name="image" class="form-control"
+							placeholder="Seleccionar imagen" name="image" class="form-control"
 							id="last_name" required>
 					</div>
 				</div>

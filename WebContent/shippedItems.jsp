@@ -77,7 +77,7 @@
 						<td><%=userId%></td>
 						<td><%=userAddr%></td>
 						<td><%=quantity%></td>
-						<td>Rs. <%=order.getAmount()%></td>
+						<td>Bs. <%=order.getAmount()%></td>
 						<td class="text-success" style="font-weight: bold;">Entregado</td>
 
 					</tr>

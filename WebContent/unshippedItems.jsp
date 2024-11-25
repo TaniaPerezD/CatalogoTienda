@@ -52,7 +52,7 @@
 						<th>direccion</th>
 						<th>Cantidad</th>
 						<th>Estado</th>
-						<th>Acción</th>
+						<th>Accion</th>
 					</tr>
 				</thead>
 				<tbody style="background-color: white;">
@@ -80,7 +80,7 @@
 						<td><%=userId%></td>
 						<td><%=userAddr%></td>
 						<td><%=quantity%></td>
-						<td>READY_TO_SHIP</td>
+						<td>Listo para entregar</td>
 						<td><a
 							href="ShipmentServlet?orderid=<%=order.getTransactionId()%>&amount=<%=order.getAmount()%>&userid=<%=userId%>&prodid=<%=order.getProductId()%>"
 							class="btn btn-success">Entregar</a></td>
