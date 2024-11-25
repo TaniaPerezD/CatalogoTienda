@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Admin Home</title>
+<title>Admin</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -17,7 +17,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/changes.css">
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color:  #FAE0DC;;">
 	<%
 	/* Checking the user credentials */
 	String userType = (String) session.getAttribute("usertype");
@@ -39,21 +39,20 @@
 	<jsp:include page="header.jsp" />
 
 	<div class="text-center"
-		style="color: green; font-size: 24px; font-weight: bold;">UnShipped
-		Orders</div>
+		style="color: black; font-size: 24px; font-weight: bold;">Pedidos</div>
 	<div class="container-fluid">
 		<div class="table-responsive ">
 			<table class="table table-hover table-sm">
 				<thead
 					style="background-color: #700fb7; color: white; font-size: 16px;">
 					<tr>
-						<th>TransactionId</th>
-						<th>ProductId</th>
-						<th>User Email Id</th>
-						<th>Address</th>
-						<th>Quantity</th>
-						<th>Status</th>
-						<th>Action</th>
+						<th>Id Pedido</th>
+						<th>Id Producto</th>
+						<th>Correo</th>
+						<th>Dirección</th>
+						<th>Cantidad</th>
+						<th>Estado</th>
+						<th>Acción</th>
 					</tr>
 				</thead>
 				<tbody style="background-color: white;">
@@ -84,7 +83,7 @@
 						<td>READY_TO_SHIP</td>
 						<td><a
 							href="ShipmentServlet?orderid=<%=order.getTransactionId()%>&amount=<%=order.getAmount()%>&userid=<%=userId%>&prodid=<%=order.getProductId()%>"
-							class="btn btn-success">SHIP NOW</a></td>
+							class="btn btn-success">Entregagr</a></td>
 					</tr>
 
 					<%
@@ -95,8 +94,7 @@
 					if (count == 0) {
 					%>
 					<tr style="background-color: grey; color: white;">
-						<td colspan="7" style="text-align: center;">No Items
-							Available</td>
+						<td colspan="7" style="text-align: center;">Sin pedidos</td>
 
 					</tr>
 					<%

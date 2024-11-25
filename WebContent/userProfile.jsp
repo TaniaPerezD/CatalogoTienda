@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Profile Details</title>
+<title>Detalle del perfil</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -18,7 +18,7 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color:  #FAE0DC;;">
 
 	<%
 	/* Checking the user credentials */
@@ -27,7 +27,7 @@
 
 	if (userName == null || password == null) {
 
-		response.sendRedirect("login.jsp?message=Session Expired, Login Again!!");
+		response.sendRedirect("login.jsp?message=¡Sesión expirada, inicie sesión de nuevo!");
 	}
 
 	UserService dao = new UserServiceImpl();
@@ -46,8 +46,7 @@
 				<nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
 					<ol class="breadcrumb mb-0">
 						<li class="breadcrumb-item"><a href="index.jsp">Home</a></li>
-						<li class="breadcrumb-item"><a href="profile.jsp">User
-								Profile</a></li>
+						<li class="breadcrumb-item"><a href="profile.jsp">Perfil</a></li>
 					</ol>
 				</nav>
 			</div>
@@ -60,12 +59,10 @@
 						<img src="images/profile.jpg" class="rounded-circle img-fluid"
 							style="width: 150px;">
 						<h5 class="my-3">
-							Hello
+							Hola
 							<%=user.getName()%>
-							here!!
+							
 						</h5>
-						<!-- <p class="text-muted mb-1">Full Stack Developer</p>
-						<p class="text-muted mb-4">Bay Area, San Francisco, CA</p> -->
 					</div>
 				</div>
 				<div class="card mb-4 mb-lg-0">
@@ -74,7 +71,7 @@
 
 							<li
 								class="text-center list-group-item d-flex justify-content-between align-items-center p-3">
-								<h1>My Profile</h1>
+								<h1>Mi perfil</h1>
 							</li>
 						</ul>
 					</div>
@@ -85,7 +82,7 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col-sm-3">
-								<p class="mb-0">Full Name</p>
+								<p class="mb-0">Nombre</p>
 							</div>
 							<div class="col-sm-9">
 								<p class="text-muted mb-0"><%=user.getName()%></p>
@@ -104,7 +101,7 @@
 						<hr>
 						<div class="row">
 							<div class="col-sm-3">
-								<p class="mb-0">Phone</p>
+								<p class="mb-0">Número</p>
 							</div>
 							<div class="col-sm-9">
 								<p class="text-muted mb-0"><%=user.getMobile()%>
@@ -114,7 +111,7 @@
 						<hr>
 						<div class="row">
 							<div class="col-sm-3">
-								<p class="mb-0">Address</p>
+								<p class="mb-0">Dirección</p>
 							</div>
 							<div class="col-sm-9">
 								<p class="text-muted mb-0"><%=user.getAddress()%>
@@ -124,7 +121,7 @@
 						<hr>
 						<div class="row">
 							<div class="col-sm-3">
-								<p class="mb-0">PinCode</p>
+								<p class="mb-0">Código</p>
 							</div>
 							<div class="col-sm-9">
 								<p class="text-muted mb-0"><%=user.getPinCode()%>

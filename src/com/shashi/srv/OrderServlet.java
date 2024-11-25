@@ -29,7 +29,7 @@ public class OrderServlet extends HttpServlet {
 
 		if (userName == null || password == null) {
 
-			response.sendRedirect("login.jsp?message=Session Expired, Login Again!!");
+			response.sendRedirect("login.jsp?message=¡Sesión expirada, inicie sesión de nuevo!");
 		}
 
 		double paidAmount = Double.parseDouble(request.getParameter("amount"));
