@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Logout Header</title>
+<title>Logout</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -22,8 +22,8 @@
 	<!--Company Header Starting  -->
 	<div class="container-fluid text-center"
 		style="margin-top: 45px; background-color: #33cc33; color: white; padding: 5px;">
-		<h2>Ellison Electronics</h2>
-		<h6>We specialize in Electronics</h6>
+		<h2>GatoByte</h2>
+		<h4>Todo en un click</h4>
 		<form class="form-inline" action="index.jsp" method="get">
 			<div class="input-group">
 				<input type="text" class="form-control" size="50" name="search"
@@ -55,15 +55,15 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="index.jsp"><span
-					class="glyphicon glyphicon-home">&nbsp;</span>Shopping Center</a>
+					class="glyphicon glyphicon-home">&nbsp;</span>Centro de compras</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login.jsp">Login</a></li>
-					<li><a href="register.jsp">Register</a></li>
-					<li><a href="index.jsp">Products</a></li>
+					<li><a href="login.jsp">Iniciar sesión</a></li>
+					<li><a href="register.jsp">Registrarse</a></li>
+					<li><a href="index.jsp">Productos</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">Category <span class="caret"></span>
+						data-toggle="dropdown" href="#">Categoría <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
 							<li><a href="index.jsp?type=mobile">Mobiles</a></li>
@@ -92,15 +92,15 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="userHome.jsp"><span
-					class="glyphicon glyphicon-home">&nbsp;</span>Shopping Center</a>
+					class="glyphicon glyphicon-home">&nbsp;</span>Centro de compras</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="userHome.jsp"><span
-							class="glyphicon glyphicon-home">Products</span></a></li>
+							class="glyphicon glyphicon-home">Productos</span></a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">Category <span class="caret"></span>
+						data-toggle="dropdown" href="#">Categoría <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
 							<li><a href="userHome.jsp?type=mobile">Mobiles</a></li>
@@ -114,7 +114,7 @@
 					if (notf == 0) {
 					%>
 					<li><a href="cartDetails.jsp"> <span
-							class="glyphicon glyphicon-shopping-cart"></span>Cart
+							class="glyphicon glyphicon-shopping-cart"></span>Carrito
 					</a></li>
 
 					<%
@@ -129,9 +129,9 @@
 					<%
 					}
 					%>
-					<li><a href="orderDetails.jsp">Orders</a></li>
-					<li><a href="userProfile.jsp">Profile</a></li>
-					<li><a href="./LogoutSrv">Logout</a></li>
+					<li><a href="orderDetails.jsp">Pedidos</a></li>
+					<li><a href="userProfile.jsp">Perfil</a></li>
+					<li><a href="./LogoutSrv">Cerrar sesión</a></li>
 				</ul>
 			</div>
 		</div>
@@ -148,13 +148,13 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="adminViewProduct.jsp"><span
-					class="glyphicon glyphicon-home">&nbsp;</span>Shopping Center</a>
+					class="glyphicon glyphicon-home">&nbsp;</span>Centro de compras</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="adminViewProduct.jsp">Products</a></li>
+					<li><a href="adminViewProduct.jsp">Productos</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">Category <span class="caret"></span>
+						data-toggle="dropdown" href="#">Categoría <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
 							<li><a href="adminViewProduct.jsp?type=mobile">Mobiles</a></li>
@@ -165,19 +165,19 @@
 							<li><a href="adminViewProduct.jsp?type=tablet">Tablets</a></li>
 						</ul></li>
 					<li><a href="adminStock.jsp">Stock</a></li>
-					<li><a href="shippedItems.jsp">Shipped</a></li>
-					<li><a href="unshippedItems.jsp">Orders</a></li>
+					<li><a href="shippedItems.jsp">Pedidos entregados</a></li>
+					<li><a href="unshippedItems.jsp">Pedidos</a></li>
 					<!-- <li><a href=""> <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Cart</a></li> -->
 					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">Update Items <span
+						data-toggle="dropdown" href="#">CRUD productos <span
 							class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="addProduct.jsp">Add Product</a></li>
-							<li><a href="removeProduct.jsp">Remove Product</a></li>
-							<li><a href="updateProductById.jsp">Update Product</a></li>
+							<li><a href="addProduct.jsp">Agregar producto</a></li>
+							<li><a href="removeProduct.jsp">Quitar producto</a></li>
+							<li><a href="updateProductById.jsp">Actualizar producto</a></li>
 						</ul></li>
-					<li><a href="./LogoutSrv">Logout</a></li>
+					<li><a href="./LogoutSrv">Cerrar sesión</a></li>
 
 				</ul>
 			</div>
