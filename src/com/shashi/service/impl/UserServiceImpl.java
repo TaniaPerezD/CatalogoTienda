@@ -27,12 +27,12 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public String registerUser(UserBean user) {
 
-		String status = "User Registration Failed!";
+		String status = "No se pudo registrar al usuario!";
 
 		boolean isRegtd = isRegistered(user.getEmail());
 
 		if (isRegtd) {
-			status = "Email Id Already Registered!";
+			status = "El correo ya está registrado!";
 			return status;
 		}
 		Connection conn = DBUtil.provideConnection();
@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
 			int k = ps.executeUpdate();
 
 			if (k > 0) {
-				status = "User Registered Successfully!";
+				status = "Usuario registrado!";
 				MailMessage.registrationSuccess(user.getEmail(), user.getName().split(" ")[0]);
 			}
 
@@ -103,7 +103,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public String isValidCredential(String emailId, String password) {
-		String status = "Login Denied! Incorrect Username or Password";
+		String status = "Credenciales incorrectas";
 
 		Connection con = DBUtil.provideConnection();
 

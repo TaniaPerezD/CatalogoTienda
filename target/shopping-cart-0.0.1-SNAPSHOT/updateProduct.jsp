@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Update Product</title>
+<title>Actualizar producto</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -16,7 +16,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color:  #FAE0DC;;">
 	<%
 	/* Checking the user credentials */
 	String utype = (String) session.getAttribute("usertype");
@@ -28,10 +28,10 @@
 		response.sendRedirect("updateProductById.jsp?message=Please Enter a valid product Id");
 		return;
 	} else if (utype == null || !utype.equals("admin")) {
-		response.sendRedirect("login.jsp?message=Access Denied, Login as admin!!");
+		response.sendRedirect("login.jsp?message=acceso denegado, Login as admin!!");
 		return;
 	} else if (uname == null || pwd == null) {
-		response.sendRedirect("login.jsp?message=Session Expired, Login Again!!");
+		response.sendRedirect("login.jsp?message=sesion expirada, inicie sesion de nuevo!");
 		return;
 	}
 	%>
@@ -51,13 +51,13 @@
 					<div class="form-group">
 						<img src="./ShowImage?pid=<%=product.getProdId()%>"
 							alt="Product Image" height="100px" />
-						<h2 style="color: green;">Product Update Form</h2>
+						<h2 style="color: black;">Actualizar producto</h2>
 					</div>
 
 					<%
 					if (message != null) {
 					%>
-					<p style="color: blue;">
+					<p style="color: black;">
 						<%=message%>
 					</p>
 					<%
@@ -70,7 +70,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-6 form-group">
-						<label for="last_name">Product Name</label> <input type="text"
+						<label for="last_name">Nombre</label> <input type="text"
 							placeholder="Enter Product Name" name="name" class="form-control"
 							value="<%=product.getProdName()%>" id="last_name" required>
 					</div>
@@ -78,40 +78,37 @@
 						<%
 						String ptype = product.getProdType();
 						%>
-						<label for="producttype">Product Type</label> <select name="type"
+						<label for="producttype">Categoria </label> <select name="type"
 							id="producttype" class="form-control" required>
-							<option value="mobile"
-								<%="mobile".equalsIgnoreCase(ptype) ? "selected" : ""%>>MOBILE</option>
-							<option value="tv"
-								<%="tv".equalsIgnoreCase(ptype) ? "selected" : ""%>>TV</option>
-							<option value="camera"
-								<%="camera".equalsIgnoreCase(ptype) ? "selected" : ""%>>CAMERA</option>
-							<option value="laptop"
-								<%="laptop".equalsIgnoreCase(ptype) ? "selected" : ""%>>LAPTOP</option>
-							<option value="tablet"
-								<%="tablet".equalsIgnoreCase(ptype) ? "selected" : ""%>>TABLET</option>
-							<option value="speaker"
-								<%="speaker".equalsIgnoreCase(ptype) ? "selected" : ""%>>SPEAKER</option>
-							<option value="other"
-								<%="other".equalsIgnoreCase(ptype) ? "selected" : ""%>>Some
-								Other Appliances</option>
+							<option value="carne"
+								<%="mobile".equalsIgnoreCase(ptype) ? "selected" : ""%>>Carne</option>
+							<option value="frutas"
+								<%="tv".equalsIgnoreCase(ptype) ? "selected" : ""%>>Frutas</option>
+							<option value="verduras"
+								<%="camera".equalsIgnoreCase(ptype) ? "selected" : ""%>>Verduras</option>
+							<option value="panes"
+								<%="laptop".equalsIgnoreCase(ptype) ? "selected" : ""%>>Panes</option>
+							<option value="lacteos"
+								<%="tablet".equalsIgnoreCase(ptype) ? "selected" : ""%>>Lacteos</option>
+							<option value="otra"
+								<%="other".equalsIgnoreCase(ptype) ? "selected" : ""%>>Otra</option>
 						</select>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="last_name">Product Description</label>
+					<label for="last_name">Descripción</label>
 					<textarea name="info" class="form-control text-align-left"
 						id="last_name" required><%=product.getProdInfo()%></textarea>
 				</div>
 				<div class="row">
 					<div class="col-md-6 form-group">
-						<label for="last_name">Unit Price</label> <input type="number"
+						<label for="last_name">Precio</label> <input type="number"
 							value="<%=product.getProdPrice()%>"
 							placeholder="Enter Unit Price" name="price" class="form-control"
 							id="last_name" required>
 					</div>
 					<div class="col-md-6 form-group">
-						<label for="last_name">Stock Quantity</label> <input type="number"
+						<label for="last_name">Stock</label> <input type="number"
 							value="<%=product.getProdQuantity()%>"
 							placeholder="Enter Stock Quantity" class="form-control"
 							id="last_name" name="quantity" required>
@@ -119,11 +116,10 @@
 				</div>
 				<div class="row text-center">
 					<div class="col-md-4" style="margin-bottom: 2px;">
-						<button formaction="adminViewProduct.jsp" class="btn btn-danger">Cancel</button>
+						<button formaction="adminViewProduct.jsp" class="btn btn-danger">Cancelar</button>
 					</div>
 					<div class="col-md-4">
-						<button type="submit" class="btn btn-success">Update
-							Product</button>
+						<button type="submit" class="btn btn-success">Actualizar</button>
 					</div>
 				</div>
 			</form>

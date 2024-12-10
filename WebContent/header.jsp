@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Logout Header</title>
+<title>Logout</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -18,7 +18,7 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color:  #FAE0DC;;">
 	<!--Company Header Starting  -->
 	<div class="container-fluid text-center"
 		style="margin-top: 45px; background-color: #fa91a0; color: white; padding: 5px;">
@@ -27,14 +27,14 @@
 		<form class="form-inline" action="index.jsp" method="get">
 			<div class="input-group">
 				<input type="text" class="form-control" size="50" name="search"
-					placeholder="Search Items" required>
+					placeholder="Buscar Producto" required>
 				<div class="input-group-btn">
 					<input type="submit" class="btn btn-danger" value="Search" />
 				</div>
 			</div>
 		</form>
 		<p align="center"
-			style="color: blue; font-weight: bold; margin-top: 5px; margin-bottom: 5px;"
+			style="color: black; font-weight: bold; margin-top: 5px; margin-bottom: 5px;"
 			id="message"></p>
 	</div>
 	<!-- Company Header Ending -->
@@ -59,19 +59,19 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login.jsp">Iniciar sesi�n</a></li>
+					<li><a href="login.jsp">Iniciar sesion</a></li>
 					<li><a href="register.jsp">Registrarse</a></li>
 					<li><a href="index.jsp">Productos</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">Categoria <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="index.jsp?type=mobile">Mobiles</a></li>
-							<li><a href="index.jsp?type=tv">TVs</a></li>
-							<li><a href="index.jsp?type=laptop">Laptops</a></li>
-							<li><a href="index.jsp?type=camera">Camera</a></li>
-							<li><a href="index.jsp?type=speaker">Speakers</a></li>
-							<li><a href="index.jsp?type=tablet">Tablets</a></li>
+							<li><a href="index.jsp?type=carne">Carne</a></li>
+							<li><a href="index.jsp?type=frutas">Frutas</a></li>
+							<li><a href="index.jsp?type=verduras">Verduras</a></li>
+							<li><a href="index.jsp?type=Panes">Panes</a></li>
+							<li><a href="index.jsp?type=lacteos">Lacteos</a></li>
+							<li><a href="index.jsp?type=otra">Otra</a></li>
 						</ul></li>
 				</ul>
 			</div>
@@ -100,15 +100,15 @@
 					<li><a href="userHome.jsp"><span
 							class="glyphicon glyphicon-home">Productos</span></a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">Categor�a <span class="caret"></span>
+						data-toggle="dropdown" href="#">Categoria <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="userHome.jsp?type=mobile">Mobiles</a></li>
-							<li><a href="userHome.jsp?type=tv">TV</a></li>
-							<li><a href="userHome.jsp?type=laptop">Laptops</a></li>
-							<li><a href="userHome.jsp?type=camera">Camera</a></li>
-							<li><a href="userHome.jsp?type=speaker">Speakers</a></li>
-							<li><a href="userHome.jsp?type=tablet">Tablets</a></li>
+							<li><a href="index.jsp?type=carne">Carne</a></li>
+							<li><a href="index.jsp?type=frutas">Frutas</a></li>
+							<li><a href="index.jsp?type=verduras">Verduras</a></li>
+							<li><a href="index.jsp?type=Panes">Panes</a></li>
+							<li><a href="index.jsp?type=lacteos">Lacteos</a></li>
+							<li><a href="index.jsp?type=otra">Otra</a></li>
 						</ul></li>
 					<%
 					if (notf == 0) {
@@ -131,7 +131,7 @@
 					%>
 					<li><a href="orderDetails.jsp">Pedidos</a></li>
 					<li><a href="userProfile.jsp">Perfil</a></li>
-					<li><a href="./LogoutSrv">Cerrar sesi�n</a></li>
+					<li><a href="./LogoutSrv">Cerrar sesion</a></li>
 				</ul>
 			</div>
 		</div>
@@ -154,15 +154,15 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="adminViewProduct.jsp">Productos</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">Categor�a <span class="caret"></span>
+						data-toggle="dropdown" href="#">Categoria <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="adminViewProduct.jsp?type=mobile">Mobiles</a></li>
-							<li><a href="adminViewProduct.jsp?type=tv">Tvs</a></li>
-							<li><a href="adminViewProduct.jsp?type=laptop">Laptops</a></li>
-							<li><a href="adminViewProduct.jsp?type=camera">Camera</a></li>
-							<li><a href="adminViewProduct.jsp?type=speaker">Speakers</a></li>
-							<li><a href="adminViewProduct.jsp?type=tablet">Tablets</a></li>
+							<li><a href="index.jsp?type=carne">Carne</a></li>
+							<li><a href="index.jsp?type=frutas">Frutas</a></li>
+							<li><a href="index.jsp?type=verduras">Verduras</a></li>
+							<li><a href="index.jsp?type=Panes">Panes</a></li>
+							<li><a href="index.jsp?type=lacteos">Lacteos</a></li>
+							<li><a href="index.jsp?type=otra">Otra</a></li>
 						</ul></li>
 					<li><a href="adminStock.jsp">Stock</a></li>
 					<li><a href="shippedItems.jsp">Pedidos entregados</a></li>
@@ -173,11 +173,11 @@
 							class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="addProduct.jsp">Añadir producto</a></li>
+							<li><a href="addProduct.jsp">Agregar producto</a></li>
 							<li><a href="removeProduct.jsp">Quitar producto</a></li>
 							<li><a href="updateProductById.jsp">Actualizar producto</a></li>
 						</ul></li>
-					<li><a href="./LogoutSrv">Cerrar sesión</a></li>
+					<li><a href="./LogoutSrv">Cerrar sesion</a></li>
 
 				</ul>
 			</div>

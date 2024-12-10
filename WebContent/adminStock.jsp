@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Product Stocks</title>
+<title>Stock de productos</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -16,7 +16,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color:  #FAE0DC;;">
 	<%
 	/* Checking the user credentials */
 	String userType = (String) session.getAttribute("usertype");
@@ -25,13 +25,13 @@
 
 	if (userType == null || !userType.equals("admin")) {
 
-		response.sendRedirect("login.jsp?message=Access Denied, Login as admin!!");
+		response.sendRedirect("login.jsp?message=acceso denegado, Login as admin!!");
 
 	}
 
 	else if (userName == null || password == null) {
 
-		response.sendRedirect("login.jsp?message=Session Expired, Login Again!!");
+		response.sendRedirect("login.jsp?message=sesion expirada, inicie sesion de nuevo!");
 
 	}
 	%>
@@ -39,22 +39,22 @@
 	<jsp:include page="header.jsp" />
 
 	<div class="text-center"
-		style="color: green; font-size: 24px; font-weight: bold;">Stock
-		Products</div>
+		style="color: black; font-size: 24px; font-weight: bold;">Stock de productos</div>
 	<div class="container-fluid">
 		<div class="table-responsive ">
 			<table class="table table-hover table-sm">
 				<thead
-					style="background-color: #2c6c4b; color: white; font-size: 18px;">
+					style="background-color: #fac491; color: white; font-size: 18px;">
 					<tr>
-						<th>Image</th>
-						<th>ProductId</th>
-						<th>Name</th>
-						<th>Type</th>
-						<th>Price</th>
-						<th>Sold Qty</th>
-						<th>Stock Qty</th>
-						<th colspan="2" style="text-align: center">Actions</th>
+						<th>Imagen</th>
+						<th>Producto Id</th>
+						<th>Nombre</th>
+						<th>Categoria</th>
+						<th>Precio</th>
+						<th>Descuento</th>
+						<th>Cantidad vendida</th>
+						<th>Stock</th>
+						<th colspan="2" style="text-align: center">Acciones</th>
 					</tr>
 				</thead>
 				<tbody style="background-color: white; font-size: 16px;">
@@ -80,20 +80,21 @@
 						<td><%=name%></td>
 						<td><%=product.getProdType().toUpperCase()%></td>
 						<td><%=product.getProdPrice()%></td>
+						<td><%=product.getDescuento()%></td>
 						<td><%=new OrderServiceImpl().countSoldItem(product.getProdId())%></td>
 						<td><%=product.getProdQuantity()%></td>
 						<td>
 							<form method="post">
 								<button type="submit"
 									formaction="updateProduct.jsp?prodid=<%=product.getProdId()%>"
-									class="btn btn-primary">Update</button>
+									class="btn btn-primary">Actualizar</button>
 							</form>
 						</td>
 						<td>
 							<form method="post">
 								<button type="submit"
 									formaction="./RemoveProductSrv?prodid=<%=product.getProdId()%>"
-									class="btn btn-danger">Remove</button>
+									class="btn btn-danger">Quitar</button>
 							</form>
 						</td>
 
@@ -106,8 +107,7 @@
 					if (products.size() == 0) {
 					%>
 					<tr style="background-color: grey; color: white;">
-						<td colspan="7" style="text-align: center;">No Items
-							Available</td>
+						<td colspan="7" style="text-align: center;">Sin productos :c</td>
 
 					</tr>
 					<%

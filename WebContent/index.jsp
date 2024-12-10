@@ -16,7 +16,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color:  #FAE0DC;">
 
 	<%
 	/* Checking the user credentials */
@@ -30,25 +30,25 @@
 		    isValidUser = false;
 		}
 		
-		ProductService prodService = new ProductServiceImpl(); // Cambio aquí
+		ProductService prodService = new ProductServiceImpl(); // Cambio aquï¿½
 		List<ProductBean> products = new ArrayList<ProductBean>();
 		
 		String search = request.getParameter("search");
 		String type = request.getParameter("type");
-		String message = "All Products";
+		String message = "Todos los productos";
 		
 		if (search != null) {
 		    products = prodService.searchAllProducts(search); // Recupera desde LinkedList
-		    message = "Showing Results for '" + search + "'";
+		    message = "Mostrando resultados para '" + search + "'";
 		} else if (type != null) {
 		    products = prodService.getAllProductsByType(type); // Recupera desde LinkedList
-		    message = "Showing Results for '" + type + "'";
+		    message = "Mostrando resultados para '" + type + "'";
 		} else {
 		    products = prodService.getAllProducts(); // Recupera desde LinkedList
 		}
 		
 		if (products.isEmpty()) {
-		    message = "No items found for the search '" + (search != null ? search : type) + "'";
+		    message = "No se encontraron productos:c '" + (search != null ? search : type) + "'";
 		    products = prodService.getAllProducts();
 		}
 	%>
@@ -80,8 +80,13 @@
 					<p class="productinfo"><%=description%>..
 					</p>
 					<p class="price">
-						Rs
+						Bs
 						<%=product.getProdPrice()%>
+					</p>
+					<p class="price">
+						Descuento
+						%
+						<%=product.getDescuento()%>
 					</p>
 					<form method="post">
 						<%
@@ -89,7 +94,7 @@
 						%>
 						<button type="submit"
 							formaction="./AddtoCart?uid=<%=userName%>&pid=<%=product.getProdId()%>&pqty=1"
-							class="btn btn-success">Añadir al carrito</button>
+							class="btn btn-success">Agregar al carrito</button>
 						&nbsp;&nbsp;&nbsp;
 						<button type="submit"
 							formaction="./AddtoCart?uid=<%=userName%>&pid=<%=product.getProdId()%>&pqty=1"

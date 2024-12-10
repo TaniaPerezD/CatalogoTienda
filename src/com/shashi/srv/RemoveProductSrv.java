@@ -31,13 +31,13 @@ public class RemoveProductSrv extends HttpServlet {
 
 		if (userType == null || !userType.equals("admin")) {
 
-			response.sendRedirect("login.jsp?message=Access Denied, Login As Admin!!");
+			response.sendRedirect("login.jsp?message=acceso denegado, Login As Admin!!");
 
 		}
 
 		else if (userName == null || password == null) {
 
-			response.sendRedirect("login.jsp?message=Session Expired, Login Again!!");
+			response.sendRedirect("login.jsp?message=sesion expirada, inicie sesion de nuevo!");
 		}
 
 		// login checked

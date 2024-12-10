@@ -37,7 +37,7 @@ public class UpdateToCart extends HttpServlet {
 
 		if (userName == null || password == null) {
 
-			response.sendRedirect("login.jsp?message=Session Expired, Login Again!!");
+			response.sendRedirect("login.jsp?message=sesion expirada, inicie sesion de nuevo!");
 		}
 
 		// login Check Successfull
@@ -62,9 +62,9 @@ public class UpdateToCart extends HttpServlet {
 
 			String status = cart.updateProductToCart(userId, prodId, availableQty);
 
-			status = "Only " + availableQty + " no of " + product.getProdName()
-					+ " are available in the shop! So we are adding only " + availableQty + " products into Your Cart"
-					+ "";
+			status = "Solo existen" + availableQty + " de " + product.getProdName()
+					+ " Se están agregando" + availableQty
+					+ " En tu carrito" + "";
 
 			DemandBean demandBean = new DemandBean(userName, product.getProdId(), pQty - availableQty);
 
@@ -73,9 +73,8 @@ public class UpdateToCart extends HttpServlet {
 			boolean flag = demand.addProduct(demandBean);
 
 			if (flag)
-				status += "<br/>Later, We Will Mail You when " + product.getProdName()
-						+ " will be available into the Store!";
-
+				status += "<br/>Te manderemos un mensaje " + product.getProdName()
+						+ " cuando esté disponible de nuevo!";
 			RequestDispatcher rd = request.getRequestDispatcher("cartDetails.jsp");
 
 			rd.include(request, response);

@@ -33,13 +33,13 @@ public class AddProductSrv extends HttpServlet {
 
 		if (userType == null || !userType.equals("admin")) {
 
-			response.sendRedirect("login.jsp?message=Access Denied!");
+			response.sendRedirect("login.jsp?message=acceso denegado!");
 
 		}
 
 		else if (userName == null || password == null) {
 
-			response.sendRedirect("login.jsp?message=Session Expired, Login Again to Continue!");
+			response.sendRedirect("login.jsp?message=sesion expirada, vuelve a Iniciar sesion!");
 		}
 
 		String status = "Product Registration Failed!";
@@ -48,6 +48,7 @@ public class AddProductSrv extends HttpServlet {
 		String prodInfo = request.getParameter("info");
 		double prodPrice = Double.parseDouble(request.getParameter("price"));
 		int prodQuantity = Integer.parseInt(request.getParameter("quantity"));
+		int descuento = Integer.parseInt(request.getParameter("descuento"));
 
 		Part part = request.getPart("image");
 
@@ -57,7 +58,7 @@ public class AddProductSrv extends HttpServlet {
 
 		ProductServiceImpl product = new ProductServiceImpl();
 
-		status = product.addProduct(prodName, prodType, prodInfo, prodPrice, prodQuantity, prodImage);
+		status = product.addProduct(prodName, prodType, prodInfo, prodPrice, prodQuantity, prodImage, descuento);
 
 		RequestDispatcher rd = request.getRequestDispatcher("addProduct.jsp?message=" + status);
 		rd.forward(request, response);

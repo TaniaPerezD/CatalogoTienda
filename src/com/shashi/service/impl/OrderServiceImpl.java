@@ -65,7 +65,7 @@ public class OrderServiceImpl implements OrderService {
 				MailMessage.transactionSuccess(userName, new UserServiceImpl().getFName(userName),
 						transaction.getTransactionId(), transaction.getTransAmount());
 
-				status = "Order Placed Successfully!";
+				status = "Pedido pagado!";
 			}
 		}
 
@@ -269,7 +269,7 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public String shipNow(String orderId, String prodId) {
-		String status = "FAILURE";
+		String status = "Fallo";
 
 		Connection con = DBUtil.provideConnection();
 
@@ -284,7 +284,7 @@ public class OrderServiceImpl implements OrderService {
 			int k = ps.executeUpdate();
 
 			if (k > 0) {
-				status = "Order Has been shipped successfully!!";
+				status = "Pedido entregado!!";
 			}
 
 		} catch (SQLException e) {

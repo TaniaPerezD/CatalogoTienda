@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Ellison Electronics</title>
+<title>GatoByte</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -16,7 +16,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color:  #FAE0DC;;">
 
 	<%
 	/* Checking the user credentials */
@@ -25,7 +25,7 @@
 
 	if (userName == null || password == null) {
 
-		response.sendRedirect("login.jsp?message=Session Expired, Login Again!!");
+		response.sendRedirect("login.jsp?message=sesion expirada, inicie sesion de nuevo!");
 	}
 
 	ProductServiceImpl prodDao = new ProductServiceImpl();
@@ -33,18 +33,18 @@
 
 	String search = request.getParameter("search");
 	String type = request.getParameter("type");
-	String message = "All Products";
+	String message = "Todos los productos";
 	if (search != null) {
 		products = prodDao.searchAllProducts(search);
-		message = "Showing Results for '" + search + "'";
+		message = "Mostrando productos para '" + search + "'";
 	} else if (type != null) {
 		products = prodDao.getAllProductsByType(type);
-		message = "Showing Results for '" + type + "'";
+		message = "Mostrando productos para '" + type + "'";
 	} else {
 		products = prodDao.getAllProducts();
 	}
 	if (products.isEmpty()) {
-		message = "No items found for the search '" + (search != null ? search : type) + "'";
+		message = "Sin productos para'" + (search != null ? search : type) + "'";
 		products = prodDao.getAllProducts();
 	}
 	%>
@@ -87,17 +87,17 @@
 						%>
 						<button type="submit"
 							formaction="./AddtoCart?uid=<%=userName%>&pid=<%=product.getProdId()%>&pqty=1"
-							class="btn btn-success">Add to Cart</button>
+							class="btn btn-success">Agregar al carrito</button>
 						&nbsp;&nbsp;&nbsp;
 						<button type="submit"
 							formaction="./AddtoCart?uid=<%=userName%>&pid=<%=product.getProdId()%>&pqty=1"
-							class="btn btn-primary">Buy Now</button>
+							class="btn btn-primary">Comprar ahora</button>
 						<%
 						} else {
 						%>
 						<button type="submit"
 							formaction="./AddtoCart?uid=<%=userName%>&pid=<%=product.getProdId()%>&pqty=0"
-							class="btn btn-danger">Remove From Cart</button>
+							class="btn btn-danger">Quitar del carrito</button>
 						&nbsp;&nbsp;&nbsp;
 						<button type="submit" formaction="cartDetails.jsp"
 							class="btn btn-success">Checkout</button>

@@ -14,7 +14,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color:  #FAE0DC;;">
 	<%
 	/* Checking the user credentials */
 	String userType = (String) session.getAttribute("usertype");
@@ -22,11 +22,11 @@
 	String password = (String) session.getAttribute("password");
 
 	if (userType == null || !userType.equals("admin")) {
-		response.sendRedirect("login.jsp?message=Access Denied, Login As Admin!!");
+		response.sendRedirect("login.jsp?message=acceso denegado, Login As Admin!!");
 		return;
 
 	} else if (userName == null || password == null) {
-		response.sendRedirect("login.jsp?message=Session Expired, Login Again!!");
+		response.sendRedirect("login.jsp?message=sesion expirada, inicie sesion de nuevo!");
 		return;
 	}
 	%>
@@ -41,13 +41,13 @@
 			style="margin-top: 5px; margin-left: 2px; margin-right: 2px;">
 			<form action="updateProduct.jsp" method="post"
 				class="col-md-4 col-md-offset-4"
-				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
+				style="border: 2px; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
-					<h3 style="color: green;">Actualizar producto</h3>
+					<h3 style="color: black;">Actualizar producto</h3>
 					<%
 					if (message != null) {
 					%>
-					<p style="color: blue;">
+					<p style="color: black;">
 						<%=message%>
 					</p>
 					<%
@@ -57,8 +57,8 @@
 				<div></div>
 				<div class="row">
 					<div class="col-md-12 form-group">
-						<label for="last_name">Product Id</label> <input type="text"
-							placeholder="Enter Product Id" name="prodid" class="form-control"
+						<label for="last_name">Id Producto</label> <input type="text"
+							placeholder="Id Producto" name="prodid" class="form-control"
 							id="last_name" required>
 					</div>
 				</div>

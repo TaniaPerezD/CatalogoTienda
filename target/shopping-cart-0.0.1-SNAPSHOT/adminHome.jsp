@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Admin Home</title>
+<title>Admin</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -16,7 +16,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color:  #FAE0DC;;">
 	<%
 	/* Checking the user credentials */
 	String userType = (String) session.getAttribute("usertype");
@@ -25,37 +25,33 @@
 
 	if (userType == null || !userType.equals("admin")) {
 
-		response.sendRedirect("login.jsp?message=Access Denied, Login as admin!!");
+		response.sendRedirect("login.jsp?message=Se requiere permisos de admin!");
 
 	}
 
 	else if (userName == null || password == null) {
 
-		response.sendRedirect("login.jsp?message=Session Expired, Login Again!!");
+		response.sendRedirect("login.jsp?message=sesion expirada, inicie sesion de nuevo!");
 
 	}
 	%>
 
 	<jsp:include page="header.jsp" />
 
-	<div class="products" style="background-color: #E6F9E6;">
+	<div class="products" style="background-color:  #FAE0DC;;">
 
 		<div class="tab" align="center">
 			<form>
-				<button type="submit" formaction="adminViewProduct.jsp">View
-					products</button>
+				<button type="submit" formaction="adminViewProduct.jsp">Ver productos</button>
 				<br>
 				<br>
-				<button type="submit" formaction="addProduct.jsp">Add
-					products</button>
+				<button type="submit" formaction="addProduct.jsp">Agregar productos</button>
 				<br>
 				<br>
-				<button type="submit" formaction="removeProduct.jsp">Remove
-					Products</button>
+				<button type="submit" formaction="removeProduct.jsp">Quitar productos</button>
 				<br>
 				<br>
-				<button type="submit" formaction="updateProductById.jsp">Update
-					Products</button>
+				<button type="submit" formaction="updateProductById.jsp">Actualizar productos</button>
 				<br>
 				<br>
 			</form>

@@ -32,7 +32,7 @@ public class LoginSrv extends HttpServlet {
 		String userType = request.getParameter("usertype");
 		response.setContentType("text/html");
 
-		String status = "Login Denied! Invalid Username or password.";
+		String status = "Credenciales incorrectas";
 
 		if (userType.equals("admin")) { // Login as Admin
 

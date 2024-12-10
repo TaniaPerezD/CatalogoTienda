@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Cart Details</title>
+<title>Detalles del carrito</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -18,7 +18,7 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color:  #FAE0DC;;">
 
 	<%
 	/* Checking the user credentials */
@@ -27,7 +27,7 @@
 
 	if (userName == null || password == null) {
 
-		response.sendRedirect("login.jsp?message=Session Expired, Login Again!!");
+		response.sendRedirect("login.jsp?message=sesion expirada, inicie sesion de nuevo!");
 
 	}
 
@@ -61,24 +61,21 @@
 	<jsp:include page="header.jsp" />
 
 	<div class="text-center"
-		style="color: green; font-size: 24px; font-weight: bold;">Cart
-		Items</div>
-	<!-- <script>document.getElementById('mycart').innerHTML='<i data-count="20" class="fa fa-shopping-cart fa-3x icon-white badge" style="background-color:#333;margin:0px;padding:0px; margin-top:5px;"></i>'</script>
- -->
+		style="color: black; font-size: 24px; font-weight: bold;">Productos del carrito</div>
 	<!-- Start of Product Items List -->
 	<div class="container">
 
 		<table class="table table-hover">
 			<thead
-				style="background-color: #186188; color: white; font-size: 16px; font-weight: bold;">
+				style="background-color: #fac491; color: white; font-size: 16px; font-weight: bold;">
 				<tr>
-					<th>Picture</th>
-					<th>Products</th>
-					<th>Price</th>
-					<th>Quantity</th>
-					<th>Add</th>
-					<th>Remove</th>
-					<th>Amount</th>
+					<th>Imagen</th>
+					<th>Productos</th>
+					<th>Precio</th>
+					<th>Cantidad</th>
+					<th>Agregar</th>
+					<th>Quitar</th>
+					<th>Total</th>
 				</tr>
 			</thead>
 			<tbody
@@ -115,7 +112,7 @@
 							<input type="number" name="pqty" value="<%=prodQuantity%>"
 								style="max-width: 70px;" min="0"> <input type="hidden"
 								name="pid" value="<%=product.getProdId()%>"> <input
-								type="submit" name="Update" value="Update"
+								type="submit" name="Actualizar" value="Update"
 								style="max-width: 80px;">
 						</form></td>
 					<td><a
@@ -133,8 +130,7 @@
 				%>
 
 				<tr style="background-color: grey; color: white;">
-					<td colspan="6" style="text-align: center;">Total Amount to
-						Pay (in Rupees)</td>
+					<td colspan="6" style="text-align: center;">Total a pagar (bs)</td>
 					<td><%=totAmount%></td>
 				</tr>
 				<%
@@ -144,11 +140,11 @@
 					<td colspan="4" style="text-align: center;">
 					<td><form method="post">
 							<button formaction="userHome.jsp"
-								style="background-color: black; color: white;">Cancel</button>
+								style="background-color: black; color: white;">Cancelar</button>
 						</form></td>
 					<td colspan="2" align="center"><form method="post">
 							<button style="background-color: blue; color: white;"
-								formaction="payment.jsp?amount=<%=totAmount%>">Pay Now</button>
+								formaction="payment.jsp?amount=<%=totAmount%>">Pagar</button>
 						</form></td>
 
 				</tr>
