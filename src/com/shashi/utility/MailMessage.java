@@ -84,6 +84,26 @@ public class MailMessage {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void productoConDescuento(String recipientEmail, String name, String prodName, String prodId, double prodPrice) {
+        String recipient = recipientEmail;
+        String subject = "Producto " + prodName + " Con Descuento en Gatobyte";
+        String htmlTextMessage = "<html>" + "  <body>" + "    <p>"
+                + "Hola " + name + ",<br/><br/>"
+                + "El producto <b>" + prodName + "</b> (ID: <b>" + prodId
+                + "</b>) que buscabas ahora tiene un descuento del 10%.<br/><br/>"
+                + "<h6>Nota: Este es un correo de demostración, no has"
+                + " realizado una transacción real.</h6>"
+                + "<br/>¡Aprovecha antes de que se agote!<br/><br/>"
+                + "¡Gracias por tu interés!<br/><br/>"
+                + "¡Te esperamos de nuevo!<br/><br/><b>Gatobyte.</b>"
+                + "    </p>" + "  </body>" + "</html>";
+        try {
+			JavaMailUtil.sendMail(recipient, subject, htmlTextMessage);
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public static String sendMessage(String toEmailId, String subject, String htmlTextMessage) {
 		try {

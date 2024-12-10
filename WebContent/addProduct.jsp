@@ -81,14 +81,19 @@
 					<textarea name="info" class="form-control" id="last_name" required></textarea>
 				</div>
 				<div class="row">
-					<div class="col-md-6 form-group">
+					<div class="col-md-4 form-group">
 						<label for="last_name">Precio</label> <input type="number"
 							placeholder="Precio" name="price" class="form-control"
 							id="last_name" required>
 					</div>
-					<div class="col-md-6 form-group">
+					<div class="col-md-4 form-group">
 						<label for="last_name">Stock</label> <input type="number"
 							placeholder="Stock" name="quantity"
+							class="form-control" id="last_name" required>
+					</div>
+					<div class="col-md-4 form-group">
+						<label for="last_name">Descuento</label> <input type="number"
+							placeholder="Stock" name="descuento"
 							class="form-control" id="last_name" required>
 					</div>
 				</div>

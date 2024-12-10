@@ -51,6 +51,7 @@
 						<th>Nombre</th>
 						<th>Categoria</th>
 						<th>Precio</th>
+						<th>Descuento</th>
 						<th>Cantidad vendida</th>
 						<th>Stock</th>
 						<th colspan="2" style="text-align: center">Acciones</th>
@@ -79,6 +80,7 @@
 						<td><%=name%></td>
 						<td><%=product.getProdType().toUpperCase()%></td>
 						<td><%=product.getProdPrice()%></td>
+						<td><%=product.getDescuento()%></td>
 						<td><%=new OrderServiceImpl().countSoldItem(product.getProdId())%></td>
 						<td><%=product.getProdQuantity()%></td>
 						<td>

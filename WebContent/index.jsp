@@ -83,6 +83,11 @@
 						Bs
 						<%=product.getProdPrice()%>
 					</p>
+					<p class="price">
+						Descuento
+						%
+						<%=product.getDescuento()%>
+					</p>
 					<form method="post">
 						<%
 						if (cartQty == 0) {

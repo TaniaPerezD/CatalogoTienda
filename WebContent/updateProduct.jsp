@@ -101,24 +101,30 @@
 						id="last_name" required><%=product.getProdInfo()%></textarea>
 				</div>
 				<div class="row">
-					<div class="col-md-6 form-group">
+					<div class="col-md-4 form-group">
 						<label for="last_name">Precio</label> <input type="number"
 							value="<%=product.getProdPrice()%>"
 							placeholder="Precio" name="price" class="form-control"
 							id="last_name" required>
 					</div>
-					<div class="col-md-6 form-group">
+					<div class="col-md-4 form-group">
 						<label for="last_name">Stock</label> <input type="number"
 							value="<%=product.getProdQuantity()%>"
 							placeholder="Stock " class="form-control"
 							id="last_name" name="quantity" required>
 					</div>
+					<div class="col-md-4 form-group">
+						<label for="last_name">Descuento</label> <input type="number"
+							value="<%=product.getDescuento()%>"
+							placeholder="Stock " class="form-control"
+							id="last_name" name="quantity" required>
+					</div>
 				</div>
 				<div class="row text-center">
-					<div class="col-md-4" style="margin-bottom: 2px;">
+					<div class="col-md-6" style="margin-bottom: 2px;">
 						<button formaction="adminViewProduct.jsp" class="btn btn-danger">Cancelar</button>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-6">
 						<button type="submit" class="btn btn-success">Actualizar</button>
 					</div>
 				</div>

@@ -100,7 +100,7 @@
 					<li><a href="userHome.jsp"><span
 							class="glyphicon glyphicon-home">Productos</span></a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">Categor�a <span class="caret"></span>
+						data-toggle="dropdown" href="#">Categoria <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
 							<li><a href="index.jsp?type=carne">Carne</a></li>

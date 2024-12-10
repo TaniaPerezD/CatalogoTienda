@@ -69,9 +69,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public String addProduct(String prodName, String prodType, String prodInfo, double prodPrice, int prodQuantity,
-            InputStream prodImage) {
+            InputStream prodImage, int descuento) {
         String prodId = IDUtil.generateId();
-        ProductBean product = new ProductBean(prodId, prodName, prodType, prodInfo, prodPrice, prodQuantity, prodImage);
+        ProductBean product = new ProductBean(prodId, prodName, prodType, prodInfo, prodPrice, prodQuantity, prodImage, descuento);
 
         return addProduct(product);
     }
@@ -83,7 +83,7 @@ public class ProductServiceImpl implements ProductService {
         PreparedStatement ps = null;
 
         try {
-            ps = con.prepareStatement("INSERT INTO product VALUES (?, ?, ?, ?, ?, ?, ?)");
+            ps = con.prepareStatement("INSERT INTO product VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             ps.setString(1, product.getProdId());
             ps.setString(2, product.getProdName());
             ps.setString(3, product.getProdType());
@@ -91,6 +91,7 @@ public class ProductServiceImpl implements ProductService {
             ps.setDouble(5, product.getProdPrice());
             ps.setInt(6, product.getProdQuantity());
             ps.setBlob(7, product.getProdImage());
+            ps.setInt(8, product.getDescuento());
 
             int rows = ps.executeUpdate();
             if (rows > 0) {
@@ -150,14 +151,15 @@ public class ProductServiceImpl implements ProductService {
 
         try {
             ps = con.prepareStatement(
-                    "UPDATE product SET pname = ?, ptype = ?, pinfo = ?, pprice = ?, pquantity = ?, image = ? WHERE pid = ?");
+                    "UPDATE product SET pname = ?, ptype = ?, pinfo = ?, pprice = ?, pquantity = ?, image = ?, descuento = ? WHERE pid = ?");
             ps.setString(1, updatedProduct.getProdName());
             ps.setString(2, updatedProduct.getProdType());
             ps.setString(3, updatedProduct.getProdInfo());
             ps.setDouble(4, updatedProduct.getProdPrice());
             ps.setInt(5, updatedProduct.getProdQuantity());
             ps.setBlob(6, updatedProduct.getProdImage());
-            ps.setString(7, prevProduct.getProdId());
+            ps.setInt(7, updatedProduct.getDescuento());
+            ps.setString(8, prevProduct.getProdId());
 
             int rows = ps.executeUpdate();
             if (rows > 0) {
@@ -201,6 +203,33 @@ public class ProductServiceImpl implements ProductService {
 
         return status;
     }
+    
+    @Override
+    public String updateProductDiscount(String prodId, int updatedDiscount) {
+        String status = "No se pudo actualizar el descuento!";
+        Connection con = DBUtil.provideConnection();
+        PreparedStatement ps = null;
+
+        try {
+            ps = con.prepareStatement("UPDATE product SET descuento = ? WHERE pid = ?");
+            ps.setInt(1, updatedDiscount);
+            ps.setString(2, prodId);
+
+            int rows = ps.executeUpdate();
+            if (rows > 0) {
+                status = "Descuento actualizado!";
+                loadProductsFromDatabase(); // Sincronizar con memoria
+            }
+        } catch (SQLException e) {
+            status = "Error: " + e.getMessage();
+            e.printStackTrace();
+            } finally {
+				DBUtil.closeConnection(con);
+				DBUtil.closeConnection(ps);
+            }
+        return status;
+    }
+
 
     @Override
     public List<ProductBean> getAllProducts() {
@@ -378,4 +407,10 @@ public class ProductServiceImpl implements ProductService {
         ProductBean product = productMap.get(prodId);
         return product != null ? product.getProdQuantity() : 0;
     }
+    
+    @Override
+	public int getProductDiscount(String prodId) {
+		ProductBean product = productMap.get(prodId);
+		return product != null ? product.getDescuento() : 0;
+	}
 }

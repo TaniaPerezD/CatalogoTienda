@@ -31,7 +31,7 @@ public class FansMessage extends HttpServlet {
 				+ "<h2 style='color:green;'>Mensaje para Gatobyte</h2>" + ""
 				+ "Mensaje recibido !!<br/><br/> Nombre: " + name + "," + "<br/><br/> Email Id: " + email
 				+ "<br><br/>" + "Comment: " + "<span style='color:grey;'>" + comments + "</span>"
-				+ "<br/><br/>Estamos contentos de que nos escogieras! <br/><br/>Thanks & Regards<br/><br/>Auto Generated Mail"
+				+ "<br/><br/>Estamos contentos de que nos escogieras! <br/><br/>Gracias<br/><br/>Correo autogenerado"
 				+ "</body>" + "</html>";
 		String message = MailMessage.sendMessage("ellison.alumni@gmail.com", "Fans Message | " + name + " | " + email,
 				htmlTextMessage);
