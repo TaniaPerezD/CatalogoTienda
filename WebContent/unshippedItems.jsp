@@ -49,7 +49,7 @@
 						<th>Id Pedido</th>
 						<th>Id Producto</th>
 						<th>Correo</th>
-						<th>direccion</th>
+						<th>Direccion</th>
 						<th>Cantidad</th>
 						<th>Estado</th>
 						<th>Accion</th>

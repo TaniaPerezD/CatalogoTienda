@@ -93,7 +93,7 @@
 					</div>
 					<div class="col-md-4 form-group">
 						<label for="last_name">Descuento</label> <input type="number"
-							placeholder="Stock" name="descuento"
+							placeholder="Descuento" name="descuento"
 							class="form-control" id="last_name" required>
 					</div>
 				</div>

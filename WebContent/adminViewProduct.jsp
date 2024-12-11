@@ -80,8 +80,24 @@
 					</p>
 					<p class="productinfo"><%=product.getProdInfo()%></p>
 					<p class="price">
-						Bs
-						<%=product.getProdPrice()%>
+						<%
+						double originalPrice = product.getProdPrice();
+						double discount = product.getDescuento(); // Porcentaje de descuento
+						double discountedPrice = originalPrice * (1 - discount / 100.0);
+						if (discount > 0) {
+						%>
+						<span style="text-decoration: line-through; color: grey;">Bs <%=originalPrice%></span>
+						<span style="color: green; font-weight: bold;">Bs <%=String.format("%.2f", discountedPrice)%></span>
+						<%
+						} else {
+						%>
+						<span>Bs <%=originalPrice%></span>
+						<%
+						}
+						%>
+					</p>
+					<p class="price">
+						Descuento: <%=discount%> %
 					</p>
 					<form method="post">
 						<button type="submit"

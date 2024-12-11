@@ -96,7 +96,7 @@
 
 					ProductBean product = new ProductServiceImpl().getProductDetails(prodId);
 
-					double currAmount = product.getProdPrice() * prodQuantity;
+					double currAmount = (product.getProdPrice() * prodQuantity) * (1 - product.getDescuento() / 100.0);
 
 					totAmount += currAmount;
 

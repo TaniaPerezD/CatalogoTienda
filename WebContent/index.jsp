@@ -62,7 +62,7 @@
 	<!-- Start of Product Items List -->
 	<div class="container">
 		<div class="row text-center">
-
+	
 			<%
 			for (ProductBean product : products) {
 				int cartQty = new CartServiceImpl().getCartItemCount(userName, product.getProdId());
@@ -71,22 +71,31 @@
 				<div class="thumbnail">
 					<img src="./ShowImage?pid=<%=product.getProdId()%>" alt="Product"
 						style="height: 150px; max-width: 180px">
-					<p class="productname"><%=product.getProdName()%>
-					</p>
+					<p class="productname"><%=product.getProdName()%></p>
 					<%
 					String description = product.getProdInfo();
 					description = description.substring(0, Math.min(description.length(), 100));
 					%>
-					<p class="productinfo"><%=description%>..
+					<p class="productinfo"><%=description%>..</p>
+					<p class="price">
+						<%
+						double originalPrice = product.getProdPrice();
+						double discount = product.getDescuento(); // Porcentaje de descuento
+						double discountedPrice = originalPrice * (1 - discount / 100.0);
+						if (discount > 0) {
+						%>
+						<span style="text-decoration: line-through; color: grey;">Bs <%=originalPrice%></span>
+						<span style="color: green; font-weight: bold;">Bs <%=String.format("%.2f", discountedPrice)%></span>
+						<%
+						} else {
+						%>
+						<span>Bs <%=originalPrice%></span>
+						<%
+						}
+						%>
 					</p>
 					<p class="price">
-						Bs
-						<%=product.getProdPrice()%>
-					</p>
-					<p class="price">
-						Descuento
-						%
-						<%=product.getDescuento()%>
+						Descuento: <%=discount%> %
 					</p>
 					<form method="post">
 						<%
@@ -106,8 +115,7 @@
 							formaction="./AddtoCart?uid=<%=userName%>&pid=<%=product.getProdId()%>&pqty=0"
 							class="btn btn-danger">Quitar del carrito</button>
 						&nbsp;&nbsp;&nbsp;
-						<button type="submit" formaction="cartDetails.jsp"
-							class="btn btn-success">Checkout</button>
+						<button type="submit" formaction="cartDetails.jsp" class="btn btn-success">Checkout</button>
 						<%
 						}
 						%>
@@ -115,13 +123,14 @@
 					<br />
 				</div>
 			</div>
-
+	
 			<%
 			}
 			%>
-
+	
 		</div>
 	</div>
+	
 	<!-- ENd of Product Items List -->
 
 
