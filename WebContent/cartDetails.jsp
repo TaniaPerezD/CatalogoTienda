@@ -72,6 +72,7 @@
 					<th>Imagen</th>
 					<th>Productos</th>
 					<th>Precio</th>
+					<th>Descuento %</th>
 					<th>Cantidad</th>
 					<th>Agregar</th>
 					<th>Quitar</th>
@@ -108,6 +109,8 @@
 						style="width: 50px; height: 50px;"></td>
 					<td><%=product.getProdName()%></td>
 					<td><%=product.getProdPrice()%></td>
+					<td><%=product.getDescuento()%></td>
+					
 					<td><form method="post" action="./UpdateToCart">
 							<input type="number" name="pqty" value="<%=prodQuantity%>"
 								style="max-width: 70px;" min="0"> <input type="hidden"
@@ -130,14 +133,14 @@
 				%>
 
 				<tr style="background-color: grey; color: white;">
-					<td colspan="6" style="text-align: center;">Total a pagar (bs)</td>
+					<td colspan="7" style="text-align: center;">Total a pagar (bs)</td>
 					<td><%=totAmount%></td>
 				</tr>
 				<%
 				if (totAmount != 0) {
 				%>
 				<tr style="background-color: grey; color: white;">
-					<td colspan="4" style="text-align: center;">
+					<td colspan="5" style="text-align: center;">
 					<td><form method="post">
 							<button formaction="userHome.jsp"
 								style="background-color: black; color: white;">Cancelar</button>

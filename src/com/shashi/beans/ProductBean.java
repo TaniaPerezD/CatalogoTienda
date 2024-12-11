@@ -28,6 +28,7 @@ public class ProductBean implements Serializable {
 		this.prodPrice = prodPrice;
 		this.prodQuantity = prodQuantity;
 		this.prodImage = prodImage;
+		this.descuento = descuento;
 	}
 	
 	
@@ -100,10 +101,15 @@ public class ProductBean implements Serializable {
 		this.prodImage = prodImage;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Product ID: " + prodId + ", Name: " + prodName + ", Type: " + prodType + ", Price: " + prodPrice
-				+ ", Quantity: " + prodQuantity;
+		return "ProductBean [prodId=" + prodId + ", prodName=" + prodName + ", prodType=" + prodType + ", prodInfo="
+				+ prodInfo + ", prodPrice=" + prodPrice + ", prodQuantity=" + prodQuantity + ", descuento=" + descuento
+				+  "]";
 	}
+
+	
 
 }

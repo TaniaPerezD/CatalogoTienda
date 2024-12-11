@@ -6,11 +6,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 import com.shashi.beans.DemandBean;
 import com.shashi.beans.ProductBean;
+import com.shashi.beans.UserBean;
 import com.shashi.service.ProductService;
 import com.shashi.utility.DBUtil;
 import com.shashi.utility.IDUtil;
@@ -53,6 +55,7 @@ public class ProductServiceImpl implements ProductService {
                 product.setProdPrice(rs.getDouble("pprice"));
                 product.setProdQuantity(rs.getInt("pquantity"));
                 product.setProdImage(rs.getAsciiStream("image"));
+                product.setDescuento(rs.getInt("descuento"));
 
                 // Poblar el HashMap y la LinkedList
                 productMap.put(product.getProdId(), product);
@@ -311,19 +314,21 @@ public class ProductServiceImpl implements ProductService {
         }
 
         int prevQuantity = new ProductServiceImpl().getProductQuantity(prevProductId);
+        int prevDescuento = new ProductServiceImpl().getProductDiscount(prevProductId);
         Connection con = DBUtil.provideConnection();
 
         PreparedStatement ps = null;
 
         try {
             ps = con.prepareStatement(
-                    "UPDATE product SET pname = ?, ptype = ?, pinfo = ?, pprice = ?, pquantity = ? WHERE pid = ?");
+                    "UPDATE product SET pname = ?, ptype = ?, pinfo = ?, pprice = ?, pquantity = ?, descuento = ? WHERE pid = ?");
             ps.setString(1, updatedProduct.getProdName());
             ps.setString(2, updatedProduct.getProdType());
             ps.setString(3, updatedProduct.getProdInfo());
             ps.setDouble(4, updatedProduct.getProdPrice());
             ps.setInt(5, updatedProduct.getProdQuantity());
-            ps.setString(6, prevProductId);
+            ps.setInt(6, updatedProduct.getDescuento());
+            ps.setString(7, prevProductId);
 
             int k = ps.executeUpdate();
 
@@ -348,6 +353,25 @@ public class ProductServiceImpl implements ProductService {
                         status += " Se mando el correo a los clientes que esperaban el producto!";
                 }
             } else if (k > 0)
+                status = "Producto actualizado!";
+            else
+                status = "Producto no disponible";
+            
+            // if para enviar correo de descuento
+			if ((k > 0) && (updatedProduct.getDescuento() > 0) && (prevDescuento != updatedProduct.getDescuento()) ) {
+				
+				Map<String, UserBean> userMap = new UserServiceImpl().getAllUsers();
+
+			    for (UserBean user : userMap.values()) {
+			        try {
+			            // Enviar el correo usando la función estática
+			            MailMessage.productoConDescuento(user.getEmail(), user.getName(), updatedProduct.getProdName(),
+			                    updatedProduct.getProdId(), updatedProduct.getDescuento());
+			        } catch (Exception e) {
+			            System.out.println("No se pudo mandar el correo a " + user.getEmail() + ": " + e.getMessage());
+			        }
+			    }
+			} else if (k > 0)
                 status = "Producto actualizado!";
             else
                 status = "Producto no disponible";

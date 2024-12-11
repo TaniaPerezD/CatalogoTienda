@@ -95,7 +95,13 @@
 						%>
 					</p>
 					<p class="price">
-						Descuento: <%=discount%> %
+					    <%
+					    if (discount > 0) {
+					    %>
+					    Descuento: <%=discount%> %
+					    <%
+					    }
+					    %>
 					</p>
 					<form method="post">
 						<%

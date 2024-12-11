@@ -116,8 +116,8 @@
 					<div class="col-md-4 form-group">
 						<label for="last_name">Descuento</label> <input type="number"
 							value="<%=product.getDescuento()%>"
-							placeholder="Stock " class="form-control"
-							id="last_name" name="quantity" required>
+							placeholder="Descuento " class="form-control"
+							id="last_name" name="descuento" required>
 					</div>
 				</div>
 				<div class="row text-center">

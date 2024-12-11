@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.shashi.beans.UserBean;
 import com.shashi.constants.IUserConstants;
@@ -227,5 +229,36 @@ public class UserServiceImpl implements UserService {
 
 		return userAddr;
 	}
+	
+	@Override
+	public Map<String, UserBean> getAllUsers() {
+        Map<String, UserBean> userMap = new HashMap<>();
+        
+        Connection con = DBUtil.provideConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            ps = con.prepareStatement("select * from user");
+            rs = ps.executeQuery();
+            
+            while(rs.next()) {
+                UserBean user = new UserBean();
+                user.setName(rs.getString("name"));
+                user.setMobile(rs.getLong("mobile"));
+                user.setEmail(rs.getString("email"));
+                user.setAddress(rs.getString("address"));
+                user.setPinCode(rs.getInt("pincode"));
+                user.setPassword(rs.getString("password"));
+                
+                userMap.put(user.getEmail(), user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            
+            }
+        
+        return userMap;
+    }
 
 }

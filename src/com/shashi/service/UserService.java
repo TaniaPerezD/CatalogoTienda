@@ -1,5 +1,7 @@
 package com.shashi.service;
 
+import java.util.Map;
+
 import com.shashi.beans.UserBean;
 
 public interface UserService {
@@ -23,5 +25,7 @@ public interface UserService {
 	public String getFName(String emailId);
 
 	public String getUserAddr(String userId);
+	
+	public Map<String, UserBean> getAllUsers();
 
 }
